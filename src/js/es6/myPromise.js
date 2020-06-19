@@ -42,8 +42,12 @@ var MyPromise = /** @class */ (function () {
         // 当前状态
         this.currentState = PENDING;
         this.value = null;
+        this.currentState = PENDING;
+        this.value = null;
+        var resolve = this.resolve.bind(this);
+        var reject = this.reject.bind(this);
         try {
-            executor(this.resolve, this.reject);
+            executor(resolve, reject);
         }
         catch (err) {
             this.reject(err);
@@ -51,11 +55,11 @@ var MyPromise = /** @class */ (function () {
     }
     MyPromise.prototype.resolve = function (value) {
         var _this = this;
+        console.log(this);
         // 如果 value 是个 Promise，递归执行
         if (value instanceof MyPromise) {
             return value.then(this.resolve, this.reject);
         }
-        console.log(this);
         setTimeout(function () {
             if (_this.currentState === PENDING) {
                 _this.currentState = FULFILLED;
@@ -82,23 +86,33 @@ var MyPromise = /** @class */ (function () {
         onResolved = typeof onResolved === 'function' ? onResolved : function (v) { return v; };
         // 2.2.7.4 If onRejected is not a function and promise1 is rejected, promise2 must be rejected with the same reason as promise1
         onRejected = typeof onResolved === 'function' ? onRejected : function (r) { throw r; };
-        // 如果状态还是 Pending 需要
-        if (this.currentState === PENDING) {
+        // 已经是 FULFILLED 状态 执行后续进程
+        if (this.currentState === FULFILLED) {
             promise2 = new MyPromise(function (resolve, reject) {
-                _this.resolvedCallbacks.push(function () {
+                setTimeout(function () {
                     try {
-                        var x = onResolved;
-                        // 递归等待
+                        var x = onResolved(_this.value);
                         _this.resolutionProcedure(promise2, x, resolve, reject);
                     }
-                    catch (err) {
+                    catch (error) {
+                        reject(error);
                     }
                 });
             });
         }
-        // 如果状态还是 Pending 需要
-        if (this.currentState === FULFILLED) {
-            promise2 = new MyPromise(function () {
+        // 如果状态还是 Pending 需要递归等待
+        if (this.currentState === PENDING) {
+            promise2 = new MyPromise(function (resolve, reject) {
+                _this.resolvedCallbacks.push(function () {
+                    try {
+                        var x = onResolved(_this.value);
+                        // 递归等待
+                        _this.resolutionProcedure(promise2, x, resolve, reject);
+                    }
+                    catch (r) {
+                        reject(r);
+                    }
+                });
             });
         }
         // 如果状态还是 Pending 需要
@@ -163,7 +177,7 @@ var MyPromise = /** @class */ (function () {
 var promise = new MyPromise(function (resolve, reject) {
     setTimeout(function () {
         resolve('hhh');
-    }, 100);
+    }, 1000);
 });
 promise.then(function (json) {
     console.log(json);

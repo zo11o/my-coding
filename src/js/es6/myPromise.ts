@@ -61,20 +61,25 @@ class MyPromise {
     private value: any = null;
 
     constructor(executor: Function) {
+        this.currentState = PENDING;
+        this.value = null;
+
+        var resolve = this.resolve.bind(this);
+        var reject = this.reject.bind(this)
         try {
-            executor(this.resolve, this.reject);
+            executor(resolve, reject);
         } catch (err) {
             this.reject(err);
         }
     }
 
     resolve<T> (value: T) {
+        console.log(this)
 
         // 如果 value 是个 Promise，递归执行
         if (value instanceof MyPromise) {
             return value.then(this.resolve, this.reject)
         }
-        console.log(this)
 
         setTimeout(() => {
 
@@ -96,7 +101,7 @@ class MyPromise {
         });
     }
 
-    then (onResolved?: Function, onRejected?: Function): MyPromise | undefined {
+    then (onResolved: Function, onRejected?: Function): MyPromise | undefined {
         // 2.2.7，then 必须返回一个新的 promise
         var promise2: any;
 
@@ -105,26 +110,32 @@ class MyPromise {
         // 2.2.7.4 If onRejected is not a function and promise1 is rejected, promise2 must be rejected with the same reason as promise1
         onRejected = typeof onResolved === 'function' ? onRejected : <E> (r: E) => { throw r }
 
+        // 已经是 FULFILLED 状态 执行后续进程
+        if (this.currentState === FULFILLED) {
+            promise2 = new MyPromise((resolve: Function, reject: Function) => {
+                setTimeout(() => {
+                    try {
+                        var x = onResolved(this.value);
+                        this.resolutionProcedure(promise2, x, resolve, reject);
+                    } catch (error) {
+                        reject(error)
+                    }
+                });
+            })
+        }
 
-        // 如果状态还是 Pending 需要
+        // 如果状态还是 Pending 需要递归等待
         if (this.currentState === PENDING) {
             promise2 = new MyPromise((resolve: Function, reject: Function) => {
                 this.resolvedCallbacks.push(() => {
                     try {
-                        var x = onResolved
+                        var x = onResolved(this.value)
                         // 递归等待
                         this.resolutionProcedure(promise2, x, resolve, reject)
-                    } catch (err) {
-
+                    } catch (r) {
+                        reject(r);
                     }
                 })
-            })
-        }
-
-        // 如果状态还是 Pending 需要
-        if (this.currentState === FULFILLED) {
-            promise2 = new MyPromise(() => {
-
             })
         }
 
@@ -189,7 +200,7 @@ class MyPromise {
 var promise = new MyPromise((resolve: Function, reject: Function) => {
     setTimeout(() => {
         resolve('hhh');
-    }, 100);
+    }, 3000);
 })
 
 promise.then((json: any) => {
