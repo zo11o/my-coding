@@ -17,12 +17,14 @@
 7. Promise （符合 Promise / A+ 规范）
 8. await / async
 9. XHTMLHttpRequest
-10. generator
-11. 添加遍历器
-12. 函数  currying (科里化) && unCurrying
-13. 原生 Dom 操作
-14. 手写发布订阅（EventBus）
-15. vue 双向绑定原理（高阶）
+10. sleep
+11. 深拷贝
+12. generator
+13. 添加遍历器
+14. 函数  currying (科里化) && unCurrying
+15. 原生 Dom 操作
+16. 手写发布订阅（EventBus）
+17. vue 双向绑定原理（高阶）
 
 ##### 项目优化
 

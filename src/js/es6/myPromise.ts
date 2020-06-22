@@ -101,14 +101,14 @@ class MyPromise {
         });
     }
 
-    then (onResolved: Function, onRejected?: Function): MyPromise | undefined {
+    then (onResolved: Function, onRejected: Function): MyPromise | undefined {
         // 2.2.7，then 必须返回一个新的 promise
         var promise2: any;
 
         // 2.2.7.3 If onFulfilled is not a function and promise1 is fulfilled, promise2 must be fulfilled with the same value as promise1.
         onResolved = typeof onResolved === 'function' ? onResolved : <T> (v: T): T => v
         // 2.2.7.4 If onRejected is not a function and promise1 is rejected, promise2 must be rejected with the same reason as promise1
-        onRejected = typeof onResolved === 'function' ? onRejected : <E> (r: E) => { throw r }
+        onRejected = typeof onRejected === 'function' ? onRejected : <E> (r: E) => { throw r }
 
         // 已经是 FULFILLED 状态 执行后续进程
         if (this.currentState === FULFILLED) {
@@ -119,6 +119,20 @@ class MyPromise {
                         this.resolutionProcedure(promise2, x, resolve, reject);
                     } catch (error) {
                         reject(error)
+                    }
+                });
+            })
+        }
+
+        // 如果状态还是 Pending 需要
+        if (this.currentState === REJECTED) {
+            promise2 = new MyPromise((resolve: Function, reject: Function) => {
+                setTimeout(() => {
+                    try {
+                        var x = onRejected(this.value);
+                        this.resolutionProcedure(promise2, x, resolve, reject);
+                    } catch (reason) {
+                        reject(reason)
                     }
                 });
             })
@@ -137,12 +151,17 @@ class MyPromise {
                     }
                 })
             })
-        }
 
-        // 如果状态还是 Pending 需要
-        if (this.currentState === REJECTED) {
-            promise2 = new MyPromise(() => {
-
+            promise2 = new MyPromise((resolve: Function, reject: Function) => {
+                this.rejectedCallbacks.push(() => {
+                    try {
+                        var x = onRejected(this.value)
+                        // 递归等待
+                        this.resolutionProcedure(promise2, x, resolve, reject)
+                    } catch (r) {
+                        reject(r);
+                    }
+                })
             })
         }
 
@@ -164,6 +183,7 @@ class MyPromise {
             } else {
                 x.then(resolve, reject)
             }
+            return 
         }
 
         // 保证 resolve 和 rejected 只能有一个被调用
