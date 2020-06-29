@@ -10,13 +10,13 @@
 
 1. * [x] call - [call.js](src/js/base/call.js)
 2. * [x] apply - [apply.js](src/js/base/apply.js)
-3. * [ ] bind
+3. * [x] bind - [bind.js](src/js/base/bind.js)
 4. * [ ] new
 5. * [ ] debounce
 6. * [ ] throttle
 7. * [ ] Promise （符合 Promise / A+ 规范）
 8. * [ ] await / async
-9. * [ ] XHTMLHttpRequest
+9. * [ ] XMLHttpRequest
 10. * [x] sleep - [sleep.js](src/js/es6/sleep.js)
 11. * [x] aop 面向切面编程 - [aop.js](src/js/base/aop.js)
 12. * [ ] bigNumber
