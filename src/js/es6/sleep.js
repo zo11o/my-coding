@@ -1,9 +1,12 @@
-function sleep(time) {
+function _sleep(time) {
     return new Promise(resolve=> setTimeout(resolve, time))
 }
 
- (async function () { 
-    await sleep(5000);
-console.log(3424)
+async function test(time){
+    var temple = await _sleep(5000);
+    console.log(1)
 
-})()
+    return temple
+}
+
+test();

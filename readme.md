@@ -8,23 +8,25 @@
 
 ##### 基础
 
-1. call
-2. apply
-3. bind
-4. new
-5. debounce
-6. throttle
-7. Promise （符合 Promise / A+ 规范）
-8. await / async
-9. XHTMLHttpRequest
-10. sleep
-11. 深拷贝
-12. generator
-13. 添加遍历器
-14. 函数  currying (科里化) && unCurrying
-15. 原生 Dom 操作
-16. 手写发布订阅（EventBus）
-17. vue 双向绑定原理（高阶）
+1. * [x] call - [call.js](src/js/base/call.js)
+2. * [x] apply - [apply.js](src/js/base/apply.js)
+3. * [ ] bind
+4. * [ ] new
+5. * [ ] debounce
+6. * [ ] throttle
+7. * [ ] Promise （符合 Promise / A+ 规范）
+8. * [ ] await / async
+9. * [ ] XHTMLHttpRequest
+10. * [x] sleep - [sleep.js](src/js/es6/sleep.js)
+11. * [x] aop 面向切面编程 - [aop.js](src/js/base/aop.js)
+12. * [ ] bigNumber
+13. * [ ] 深拷贝
+14. * [ ] generator
+15. * [ ] 添加遍历器
+16. * [ ] 函数  currying (科里化) && unCurrying
+17. * [ ] 原生 Dom 操作
+18. * [ ] 手写发布订阅（EventBus）
+19. * [ ] vue 双向绑定原理（高阶）
 
 ##### 项目优化
 
@@ -51,7 +53,7 @@
 3. 插入排序
 4. 希尔排序
 5. 归并排序
-6. 快速排序
+6. * [x] 快速排序 - [quickSort.js](src/algorithm/sort/quickSort.js)
 7. 堆排序
 8. 计数排序
 
