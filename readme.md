@@ -11,10 +11,10 @@
 1. * [x] call - [call.js](src/js/base/call.js)
 2. * [x] apply - [apply.js](src/js/base/apply.js)
 3. * [x] bind - [bind.js](src/js/base/bind.js)
-4. * [ ] new
+4. * [x] new - [new.js](src/js/base/new.js)
 5. * [ ] debounce
 6. * [ ] throttle
-7. * [ ] Promise （符合 Promise / A+ 规范）
+7. * [ ] Promise （符合 Promise / A+ 规范） - [myPromise.js](src/js/es6/myPromise.ts)
 8. * [ ] await / async
 9. * [ ] XMLHttpRequest
 10. * [x] sleep - [sleep.js](src/js/es6/sleep.js)
@@ -68,6 +68,25 @@
 1. 最长回文串
 
 ##### 回溯
+
+回溯模板
+
+1. 路径
+2. 选择列表
+3. 结束条件
+
+```js
+result = []
+def backtrack(路径, 选择列表):
+    if 满足结束条件:
+        result.add(路径)
+        return
+
+    for 选择 in 选择列表:
+        做选择
+        backtrack(路径, 选择列表)
+        撤销选择
+```
 
 ##### BFS
 
