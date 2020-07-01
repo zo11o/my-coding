@@ -12,7 +12,7 @@
 2. * [x] apply - [apply.js](src/js/base/apply.js)
 3. * [x] bind - [bind.js](src/js/base/bind.js)
 4. * [x] new - [new.js](src/js/base/new.js)
-5. * [ ] debounce
+5. * [x] debounce - [debounce.js](src/js/base/debounce.js)
 6. * [ ] throttle
 7. * [ ] Promise （符合 Promise / A+ 规范） - [myPromise.js](src/js/es6/myPromise.ts)
 8. * [ ] await / async
@@ -40,28 +40,28 @@
 
 #### CSS 基础
 
-1. 垂直居中
-2. 瀑布流
-3. 圣杯布局
+1. * [ ] 垂直居中
+2. * [ ] 瀑布流
+3. * [ ] 圣杯布局
 
 #### 算法
 
 ##### 排序算法
 
-1. 冒泡排序
-2. 选择排序
-3. 插入排序
-4. 希尔排序
-5. 归并排序
+1. * [ ] 冒泡排序
+2. * [ ] 选择排序
+3. * [ ] 插入排序
+4. * [ ] 希尔排序
+5. * [ ] 归并排序
 6. * [x] 快速排序 - [quickSort.js](src/algorithm/sort/quickSort.js)
-7. 堆排序
-8. 计数排序
+7. * [ ] 堆排序
+8. * [ ] 计数排序
 
 ##### 动态规划
 
-1. 斐波那契
-2. 爬楼梯
-3. 01背包
+1. * [ ] 斐波那契
+2. * [ ] 爬楼梯
+3. * [ ] 01背包
 
 ##### 贪婪
 
