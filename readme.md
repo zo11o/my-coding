@@ -13,8 +13,8 @@
 3. * [x] bind - [bind.js](src/js/base/bind.js)
 4. * [x] new - [new.js](src/js/base/new.js)
 5. * [x] debounce - [debounce.js](src/js/base/debounce.js)
-6. * [ ] throttle
-7. * [ ] Promise （符合 Promise / A+ 规范） - [myPromise.js](src/js/es6/myPromise.ts)
+6. * [x] throttle - [throttle.js](src/js/base/throttle.js)
+7. * [x] Promise （符合 Promise / A+ 规范） - [myPromise.js](src/js/es6/myPromise.ts)
 8. * [ ] await / async
 9. * [ ] XMLHttpRequest
 10. * [x] sleep - [sleep.js](src/js/es6/sleep.js)
