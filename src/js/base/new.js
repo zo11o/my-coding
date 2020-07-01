@@ -28,8 +28,16 @@ var myNew = function () {
 
     // 3. 执行构造函数中的方法
     var result = constructor.apply(obj, args)
+
+    // 如果构造函数返回是对象或者函数 即返回该结果 否则返回创建的对象
+    var isObject = typeof result === 'object' && result !== null
+    var isFunction = typeof result === 'function'
+    if (isObject || isFunction) {
+        return result
+    }
+
     // 4. 返回新对象
-    return result ? result : obj
+    return obj
 }
 
 
