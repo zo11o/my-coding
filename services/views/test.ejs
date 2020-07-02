@@ -1,17 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><%= title %></title>
 </head>
+
 <body>
-    是打发斯蒂芬<%= title %>
+    <h1>这里我们写原生XMLHttpRequest</h1>
+    <div id="status"></div>
+    <form id="form">
+        <input id="input" name="name" />
+        <select id="select" name="select">
+            <option value="1">1</option>
+            <option value="2" checked>2</option>
+        </select>
+        <input type="checkbox" name="checkbox1" value="1" /> 选项1
+        <input type="checkbox" name="checkbox2" value="2" /> 选项2
+        <button type="button" onclick="postData()">提交</button>
+    </form>
 </body>
+
 </html>
 
 <script>
-
     // 1. 同步
     // var xhr = new XMLHttpRequest();
     // xhr.open('get', '/api/getId?id=5342546', false);
@@ -32,32 +45,91 @@
     // 3 接收部分
     // 4 全部接收完成
 
-    var getUrl = addURLParam('/api/getId', 'id' , 'asdfli345')
+    // var getUrl = addURLParam('/api/getId', 'id' , 'asdfli345')
 
-    xhr.onreadystatechange = function () {
-        if (xhr.readyState == 4) {
-            if ((xhr.status >= 200 && xhr.status < 300) || xhr.status == 304) {
-                // console.log(xhr.responseText);
+    // xhr.onreadystatechange = function () {
+    //     if (xhr.readyState == 4) {
+    //         if ((xhr.status >= 200 && xhr.status < 300) || xhr.status == 304) {
+    //             // console.log(xhr.responseText);
 
-                // 获取全部响应头的方法 xhr.getAllResponseHeaders();
-                var responseHeader = xhr.getAllResponseHeaders();
-                console.log(responseHeader);
+    //             // 获取全部响应头的方法 xhr.getAllResponseHeaders();
+    //             var responseHeader = xhr.getAllResponseHeaders();
+    //             console.log(responseHeader);
 
-                var data = xhr.responseText
-                data = JSON.parse(data);
-                console.log(data);
-            } else {
-                console.log('fail:' + xhr.status)
-            }
-        }
-    }
-    xhr.open('get', getUrl, true);
-    xhr.setRequestHeader('MyHeader', "myValue")
-    xhr.send(null)
+    //             var data = xhr.responseText
+    //             data = JSON.parse(data);
+    //             console.log(data);
+    //         } else {
+    //             console.log('fail:' + xhr.status)
+    //         }
+    //     }
+    // }
+
+    // get 请求
+    // xhr.open('get', getUrl, true);
+    // xhr.setRequestHeader('MyHeader', "myValue")
+    // xhr.send(null)
+
+    // post 请求
 
     function addURLParam(url, name, value) {
+        if (!name) return url
+
         url += url.indexOf('?') == -1 ? '?' : '&';
         url += encodeURIComponent(name) + '=' + encodeURIComponent(value)
         return url
+    }
+
+    function postData() {
+        console.log(22)
+        var xhr = new XMLHttpRequest();
+        var postUrl = addURLParam('/api/postInfo');
+        xhr.onreadystatechange = function () {
+            if ((xhr.readyState >= 200 && xhr.status < 300) || xhr.readyState == 304) {
+                console.log(xhr.responseText)
+            } else {
+                // 失败
+            }
+        }
+        // onprogress 必须在open 之前调用
+        xhr.onprogress = function (event) {
+            var divStatus = document.getElementById('status');
+            if (event.lengthComputable) {
+                console.log(event)
+
+                // chrome
+                divStatus.innerHTML = event.loaded + ':' +event.total
+            }
+        }
+
+        xhr.open('post', postUrl, true);
+
+
+        // 第二种方式必须写
+        xhr.setRequestHeader('content-type', 'application/x-www-form-urlencoded');
+
+        // 第一种方式：XMLHttpRequest 2级表单提交
+        // var sendData = new FormData(document.getElementById('form'))
+
+        // 第二种方式：json 提交
+        var sendData = {
+            name: 'zo11o',
+            age: 23
+        }
+        sendData = qs(sendData)
+        xhr.send(sendData)
+       
+    }
+
+    // 简易 包装 ajax 请求方法
+    function qs(json) {
+        var formData = ''
+        for (var o in json) {
+            if (formData) {
+                formData += '&'
+            }
+            formData += encodeURIComponent(o) + '=' + encodeURIComponent(json[o]);
+        }
+        return formData
     }
 </script>
