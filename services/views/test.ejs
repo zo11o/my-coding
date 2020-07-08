@@ -45,33 +45,39 @@
     // 3 接收部分
     // 4 全部接收完成
 
-    // var getUrl = addURLParam('/api/getId', 'id' , 'asdfli345')
+    var ajax = function () {
 
-    // xhr.onreadystatechange = function () {
-    //     if (xhr.readyState == 4) {
-    //         if ((xhr.status >= 200 && xhr.status < 300) || xhr.status == 304) {
-    //             // console.log(xhr.responseText);
+        // IE 浏览器下 var xhr = new ActiveXObject("Microsoft.XMLHTTP");
+        var xhr = new XMLHttpRequest();
+        var getUrl = addURLParam('/api/getId', 'id', 'asdfli345')
 
-    //             // 获取全部响应头的方法 xhr.getAllResponseHeaders();
-    //             var responseHeader = xhr.getAllResponseHeaders();
-    //             console.log(responseHeader);
+        xhr.onreadystatechange = function () {
+            if (xhr.readyState == 4) {
+                if ((xhr.status >= 200 && xhr.status < 300) || xhr.status == 304) {
+                    // console.log(xhr.responseText);
 
-    //             var data = xhr.responseText
-    //             data = JSON.parse(data);
-    //             console.log(data);
-    //         } else {
-    //             console.log('fail:' + xhr.status)
-    //         }
-    //     }
-    // }
+                    // 获取全部响应头的方法 xhr.getAllResponseHeaders();
+                    var responseHeader = xhr.getAllResponseHeaders();
+                    console.log(responseHeader);
 
-    // get 请求
-    // xhr.open('get', getUrl, true);
-    // xhr.setRequestHeader('MyHeader', "myValue")
-    // xhr.send(null)
+                    var data = xhr.responseText
+                    data = JSON.parse(data);
+                    console.log(data);
+                } else {
+                    console.log('fail:' + xhr.status)
+                }
+            }
+        }
+
+        //get 请求
+        xhr.open('get', getUrl, true);
+        xhr.setRequestHeader('MyHeader', "myValue")
+        xhr.send(null)
+    }
+
+
 
     // post 请求
-
     function addURLParam(url, name, value) {
         if (!name) return url
 
@@ -81,7 +87,6 @@
     }
 
     function postData() {
-        console.log(22)
         var xhr = new XMLHttpRequest();
         var postUrl = addURLParam('/api/postInfo');
         xhr.onreadystatechange = function () {
@@ -98,7 +103,7 @@
                 console.log(event)
 
                 // chrome
-                divStatus.innerHTML = event.loaded + ':' +event.total
+                divStatus.innerHTML = event.loaded + ':' + event.total
             }
         }
 
@@ -118,7 +123,48 @@
         }
         sendData = qs(sendData)
         xhr.send(sendData)
-       
+    }
+
+
+    // 这里是 XMLHttpRequest 2级
+    function postData2() {
+        var xhr = new XMLHttpRequest();
+        var postUrl = addURLParam('/api/postInfo');
+        xhr.onload = function () {
+            console.log(xhr.responseText)
+        }
+        xhr.onerror = function (error) {
+            console.log(error)
+        }
+
+
+        // onprogress 必须在open 之前调用
+        xhr.onprogress = function (event) {
+            var divStatus = document.getElementById('status');
+            if (event.lengthComputable) {
+                console.log(event)
+
+                // chrome
+                divStatus.innerHTML = event.loaded + ':' + event.total
+            }
+        }
+
+        xhr.open('post', postUrl, true);
+
+
+        // 第二种方式必须写
+        xhr.setRequestHeader('content-type', 'application/x-www-form-urlencoded');
+
+        // 第一种方式：XMLHttpRequest 2级表单提交
+        // var sendData = new FormData(document.getElementById('form'))
+
+        // 第二种方式：json 提交
+        var sendData = {
+            name: 'zo11o',
+            age: 23
+        }
+        sendData = qs(sendData)
+        xhr.send(sendData)
     }
 
     // 简易 包装 ajax 请求方法

@@ -16,7 +16,7 @@
 6. * [x] throttle - [throttle.js](src/js/base/throttle.js)
 7. * [x] Promise （符合 Promise / A+ 规范） - [myPromise.js](src/js/es6/myPromise.ts)
 8. * [ ] await / async
-9. * [ ] XMLHttpRequest
+9. * [x] XMLHttpRequest [ajax.js](src/js/base/ajax.js)
 10. * [x] sleep - [sleep.js](src/js/es6/sleep.js)
 11. * [x] aop 面向切面编程 - [aop.js](src/js/base/aop.js)
 12. * [ ] bigNumber
