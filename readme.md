@@ -23,7 +23,7 @@
 13. * [ ] 深拷贝
 14. * [ ] generator
 15. * [ ] 添加遍历器
-16. * [ ] 函数  currying (科里化) && unCurrying
+16. * [x] 函数  currying (科里化) && unCurrying - [curry.js](src/js/base/curry.js)
 17. * [ ] 原生 Dom 操作
 18. * [ ] 手写发布订阅（EventBus）
 19. * [ ] vue 双向绑定原理（高阶）
