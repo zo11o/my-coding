@@ -2,180 +2,259 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><%= title %></title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title><%= title %></title>
 </head>
 
 <body>
-    <h1>这里我们写原生XMLHttpRequest</h1>
-    <div id="status"></div>
-    <form id="form">
-        <input id="input" name="name" />
-        <select id="select" name="select">
-            <option value="1">1</option>
-            <option value="2" checked>2</option>
-        </select>
-        <input type="checkbox" name="checkbox1" value="1" /> 选项1
-        <input type="checkbox" name="checkbox2" value="2" /> 选项2
-        <button type="button" onclick="postData()">提交</button>
-    </form>
+  <h1>这里我们写原生XMLHttpRequest</h1>
+  <div id="status"></div>
+  <form id="form">
+    <input id="input" name="name" />
+    <select id="select" name="select">
+      <option value="1">1</option>
+      <option value="2" checked>2</option>
+    </select>
+    <input type="checkbox" name="checkbox1" value="1" /> 选项1
+    <input type="checkbox" name="checkbox2" value="2" /> 选项2
+    <button type="button" onclick="postData()">提交</button>
+    <button type="button" onclick="postAjax()">发起跨域请求</button>
+  </form>
 </body>
 
 </html>
 
 <script>
-    // 1. 同步
-    // var xhr = new XMLHttpRequest();
-    // xhr.open('get', '/api/getId?id=5342546', false);
-    // xhr.send(null)
+  // 1. 同步
+  // var xhr = new XMLHttpRequest();
+  // xhr.open('get', '/api/getId?id=5342546', false);
+  // xhr.send(null)
 
-    // if ((xhr.status >= 200 && xhr.status < 300) || xhr.status == 304) {
-    //     console.log(xhr.status , xhr.responseText);
-    // } else {
-    //     alert("Request was unsuccessfun:" + xhr.status)
-    // }
+  // if ((xhr.status >= 200 && xhr.status < 300) || xhr.status == 304) {
+  //     console.log(xhr.status , xhr.responseText);
+  // } else {
+  //     alert("Request was unsuccessfun:" + xhr.status)
+  // }
 
-    // 2. 异步
+  // 2. 异步
+  var xhr = new XMLHttpRequest();
+  // readyState 有五个状态。 每次状态变更会触发 onreadyStatechange 事件
+  // 0 尚未open
+  // 1 已经open 尚未 send
+  // 2 已经 send
+  // 3 接收部分
+  // 4 全部接收完成
+
+  var ajax = function () {
+
+    // IE 浏览器下 var xhr = new ActiveXObject("Microsoft.XMLHTTP");
     var xhr = new XMLHttpRequest();
-    // readyState 有五个状态。 每次状态变更会触发 onreadyStatechange 事件
-    // 0 尚未open
-    // 1 已经open 尚未 send
-    // 2 已经 send
-    // 3 接收部分
-    // 4 全部接收完成
+    var getUrl = addURLParam('/api/getId', 'id', 'asdfli345')
 
-    var ajax = function () {
+    xhr.onreadystatechange = function () {
+      if (xhr.readyState == 4) {
+        if ((xhr.status >= 200 && xhr.status < 300) || xhr.status == 304) {
+          // console.log(xhr.responseText);
 
-        // IE 浏览器下 var xhr = new ActiveXObject("Microsoft.XMLHTTP");
-        var xhr = new XMLHttpRequest();
-        var getUrl = addURLParam('/api/getId', 'id', 'asdfli345')
+          // 获取全部响应头的方法 xhr.getAllResponseHeaders();
+          var responseHeader = xhr.getAllResponseHeaders();
+          console.log(responseHeader);
 
-        xhr.onreadystatechange = function () {
-            if (xhr.readyState == 4) {
-                if ((xhr.status >= 200 && xhr.status < 300) || xhr.status == 304) {
-                    // console.log(xhr.responseText);
-
-                    // 获取全部响应头的方法 xhr.getAllResponseHeaders();
-                    var responseHeader = xhr.getAllResponseHeaders();
-                    console.log(responseHeader);
-
-                    var data = xhr.responseText
-                    data = JSON.parse(data);
-                    console.log(data);
-                } else {
-                    console.log('fail:' + xhr.status)
-                }
-            }
+          var data = xhr.responseText
+          data = JSON.parse(data);
+          console.log(data);
+        } else {
+          console.log('fail:' + xhr.status)
         }
+      }
+    }
 
-        //get 请求
-        xhr.open('get', getUrl, true);
-        xhr.setRequestHeader('MyHeader', "myValue")
-        xhr.send(null)
+    //get 请求
+    xhr.open('get', getUrl, true);
+    xhr.setRequestHeader('MyHeader', "myValue")
+    xhr.send(null)
+  }
+
+
+
+  // post 请求
+  function addURLParam(url, name, value) {
+    if (!name) return url
+
+    url += url.indexOf('?') == -1 ? '?' : '&';
+    url += encodeURIComponent(name) + '=' + encodeURIComponent(value)
+    return url
+  }
+
+  function postData() {
+    var xhr = new XMLHttpRequest();
+    var postUrl = addURLParam('/api/postInfo');
+    xhr.onreadystatechange = function () {
+      if ((xhr.readyState >= 200 && xhr.status < 300) || xhr.readyState == 304) {
+        console.log(xhr.responseText)
+      } else {
+        // 失败
+      }
+    }
+    // onprogress 必须在open 之前调用
+    xhr.onprogress = function (event) {
+      var divStatus = document.getElementById('status');
+      if (event.lengthComputable) {
+        console.log(event)
+
+        // chrome
+        divStatus.innerHTML = event.loaded + ':' + event.total
+      }
+    }
+
+    xhr.open('post', postUrl, true);
+
+
+    // 第二种方式必须写
+    xhr.setRequestHeader('content-type', 'application/x-www-form-urlencoded');
+
+    // 第一种方式：XMLHttpRequest 2级表单提交
+    // var sendData = new FormData(document.getElementById('form'))
+
+    // 第二种方式：json 提交
+    var sendData = {
+      name: 'zo11o',
+      age: 23
+    }
+    sendData = qs(sendData)
+    xhr.send(sendData)
+  }
+
+
+  // 这里是 XMLHttpRequest 2级
+  function postData2() {
+    var xhr = new XMLHttpRequest();
+    var postUrl = addURLParam('/api/postInfo');
+    xhr.onload = function () {
+      console.log(xhr.responseText)
+    }
+    xhr.onerror = function (error) {
+      console.log(error)
     }
 
 
+    // onprogress 必须在open 之前调用
+    xhr.onprogress = function (event) {
+      var divStatus = document.getElementById('status');
+      if (event.lengthComputable) {
+        console.log(event)
 
-    // post 请求
-    function addURLParam(url, name, value) {
-        if (!name) return url
+        // chrome
+        divStatus.innerHTML = event.loaded + ':' + event.total
+      }
+    }
 
+    xhr.open('post', postUrl, true);
+
+
+    // 第二种方式必须写
+    xhr.setRequestHeader('content-type', 'application/x-www-form-urlencoded');
+
+    // 第一种方式：XMLHttpRequest 2级表单提交
+    // var sendData = new FormData(document.getElementById('form'))
+
+    // 第二种方式：json 提交
+    var sendData = {
+      name: 'zo11o',
+      age: 23
+    }
+    sendData = qs(sendData)
+    xhr.send(sendData)
+  }
+
+  // 简易 包装 ajax 请求方法
+  function qs(json) {
+    var formData = ''
+    for (var o in json) {
+      if (formData) {
+        formData += '&'
+      }
+      formData += encodeURIComponent(o) + '=' + encodeURIComponent(json[o]);
+    }
+    return formData
+  }
+
+
+  function myAjax(options) {
+    var url = options.url || ''
+    var method = options.method.toLowerCase() || 'get';
+    var data = options.data || {}
+    var _success = options.success || function (resp) {
+
+    }
+    var _error = options.error || function (e) {
+      console.log(e)
+    }
+
+    var xhr = new XMLHttpRequest();
+
+    xhr.onload = function () {
+      var resp = JSON.parse(xhr.responseText)
+      _success(resp)
+    }
+    xhr.onerror = function (error) {
+      _error(error)
+    }
+
+    var body = null;
+    if (method === 'post') {
+      xhr.open(method, url, true);
+      xhr.setRequestHeader('content-type', 'application/x-www-form-urlencoded');
+      body = _qs(data);
+    } else {
+      url = _formatUrl(url, data)
+      xhr.open(method, url, true);
+    }
+
+    xhr.send(body)
+
+    function _formatUrl(url, data) {
+      if (!url) return ''
+
+      for (var name in data) {
         url += url.indexOf('?') == -1 ? '?' : '&';
-        url += encodeURIComponent(name) + '=' + encodeURIComponent(value)
-        return url
+        url += encodeURIComponent(name) + '=' + encodeURIComponent(data[name])
+      }
+
+      return url
     }
 
-    function postData() {
-        var xhr = new XMLHttpRequest();
-        var postUrl = addURLParam('/api/postInfo');
-        xhr.onreadystatechange = function () {
-            if ((xhr.readyState >= 200 && xhr.status < 300) || xhr.readyState == 304) {
-                console.log(xhr.responseText)
-            } else {
-                // 失败
-            }
+    function _qs(json) {
+      var formData = ''
+      for (var o in json) {
+        if (formData) {
+          formData += '&'
         }
-        // onprogress 必须在open 之前调用
-        xhr.onprogress = function (event) {
-            var divStatus = document.getElementById('status');
-            if (event.lengthComputable) {
-                console.log(event)
-
-                // chrome
-                divStatus.innerHTML = event.loaded + ':' + event.total
-            }
-        }
-
-        xhr.open('post', postUrl, true);
-
-
-        // 第二种方式必须写
-        xhr.setRequestHeader('content-type', 'application/x-www-form-urlencoded');
-
-        // 第一种方式：XMLHttpRequest 2级表单提交
-        // var sendData = new FormData(document.getElementById('form'))
-
-        // 第二种方式：json 提交
-        var sendData = {
-            name: 'zo11o',
-            age: 23
-        }
-        sendData = qs(sendData)
-        xhr.send(sendData)
+        formData += encodeURIComponent(o) + '=' + encodeURIComponent(json[o]);
+      }
+      return formData
     }
+  }
 
 
-    // 这里是 XMLHttpRequest 2级
-    function postData2() {
-        var xhr = new XMLHttpRequest();
-        var postUrl = addURLParam('/api/postInfo');
-        xhr.onload = function () {
-            console.log(xhr.responseText)
-        }
-        xhr.onerror = function (error) {
-            console.log(error)
-        }
-
-
-        // onprogress 必须在open 之前调用
-        xhr.onprogress = function (event) {
-            var divStatus = document.getElementById('status');
-            if (event.lengthComputable) {
-                console.log(event)
-
-                // chrome
-                divStatus.innerHTML = event.loaded + ':' + event.total
-            }
-        }
-
-        xhr.open('post', postUrl, true);
-
-
-        // 第二种方式必须写
-        xhr.setRequestHeader('content-type', 'application/x-www-form-urlencoded');
-
-        // 第一种方式：XMLHttpRequest 2级表单提交
-        // var sendData = new FormData(document.getElementById('form'))
-
-        // 第二种方式：json 提交
-        var sendData = {
-            name: 'zo11o',
-            age: 23
-        }
-        sendData = qs(sendData)
-        xhr.send(sendData)
+// postAjax
+function postAjax () {
+  myAjax({
+    // 跨域
+    // url: 'http://localhost:3002/api/getInfo',
+    url: '/api/getId',
+    method: 'get',
+    data: {
+      id: '123456',
+      name: 'zo11o',
+      age: '22'
+    },
+    success: function(resp) {
+      console.log(resp)
     }
+  })
+}
 
-    // 简易 包装 ajax 请求方法
-    function qs(json) {
-        var formData = ''
-        for (var o in json) {
-            if (formData) {
-                formData += '&'
-            }
-            formData += encodeURIComponent(o) + '=' + encodeURIComponent(json[o]);
-        }
-        return formData
-    }
+
 </script>

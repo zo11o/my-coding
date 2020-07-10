@@ -137,4 +137,17 @@ def backtrack(路径, 选择列表):
 
 * 每个实现都需要通过测试用例
 
+### 项目使用
+
+本项目已经搭建了 koa2 服务器，可以用于网络请求
+Koa2 服务的目录为 `/services`
+
+本地开发开启 Koa2 服务:
+根目录下运行: `node run nodemon`
+
+如果需要添加路由:
+
+1. `/services/routes/index.js` 添加路由文件
+2. `/services/controllers` 编写路由控制器
+
 [项目链接：https://github.com/zo11o/my-coding](https://github.com/zo11o/my-coding)

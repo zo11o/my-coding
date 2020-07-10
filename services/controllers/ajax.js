@@ -8,6 +8,10 @@ module.exports = {
   getId: async (ctx, next) => {
     let id = ctx.request;
     console.log(ctx);
+    var data = {
+      id: '3231',
+      name: 'zo11o'
+    }
     if (id) {
       ctx.response.status = 200;
       ctx.body = {
