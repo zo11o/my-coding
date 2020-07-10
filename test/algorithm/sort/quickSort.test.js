@@ -8,8 +8,8 @@ test('quickSort arg [0]', () => {
     expect(quickSort([0])).toStrictEqual([0]);
 })
 
-test('quickSort arg [0]', () => {
-    expect(quickSort([0])).toStrictEqual([1]);
+test('quickSort arg [1]', () => {
+    expect(quickSort([1])).toStrictEqual([1]);
 })
 
 test('quickSort [1,3,5,2,4]', () => {

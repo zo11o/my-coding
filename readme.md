@@ -14,19 +14,20 @@
 4. * [x] new - [new.js](src/js/base/new.js)
 5. * [x] debounce - [debounce.js](src/js/base/debounce.js)
 6. * [x] throttle - [throttle.js](src/js/base/throttle.js)
-7. * [x] Promise （符合 Promise / A+ 规范） - [myPromise.js](src/js/es6/myPromise.ts)
-8. * [ ] await / async
-9. * [ ] XMLHttpRequest
-10. * [x] sleep - [sleep.js](src/js/es6/sleep.js)
-11. * [x] aop 面向切面编程 - [aop.js](src/js/base/aop.js)
-12. * [ ] bigNumber
-13. * [ ] 深拷贝
-14. * [ ] generator
-15. * [ ] 添加遍历器
-16. * [ ] 函数  currying (科里化) && unCurrying
-17. * [ ] 原生 Dom 操作
-18. * [ ] 手写发布订阅（EventBus）
-19. * [ ] vue 双向绑定原理（高阶）
+7. * [ ] jsonp
+8. * [x] Promise （符合 Promise / A+ 规范） - [myPromise.js](src/js/es6/myPromise.ts)
+9. * [ ] await / async
+10. * [ ] XMLHttpRequest
+11. * [x] sleep - [sleep.js](src/js/es6/sleep.js)
+12. * [x] aop 面向切面编程 - [aop.js](src/js/base/aop.js)
+13. * [ ] bigNumber
+14. * [ ] 深拷贝
+15. * [ ] generator
+16. * [ ] 添加遍历器
+17. * [ ] 函数  currying (科里化) && unCurrying
+18. * [ ] 原生 Dom 操作
+19. * [ ] 手写发布订阅（EventBus）
+20. * [ ] vue 双向绑定原理（高阶）
 
 ##### 项目优化
 
