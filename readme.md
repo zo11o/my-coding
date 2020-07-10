@@ -8,25 +8,27 @@
 
 ##### 基础
 
-1. * [x] call - [call.js](src/js/base/call.js)
-2. * [x] apply - [apply.js](src/js/base/apply.js)
-3. * [x] bind - [bind.js](src/js/base/bind.js)
-4. * [x] new - [new.js](src/js/base/new.js)
-5. * [x] debounce - [debounce.js](src/js/base/debounce.js)
-6. * [x] throttle - [throttle.js](src/js/base/throttle.js)
-7. * [x] Promise （符合 Promise / A+ 规范） - [myPromise.js](src/js/es6/myPromise.ts)
-8. * [ ] await / async
-9. * [x] XMLHttpRequest [ajax.js](src/js/base/ajax.js)
-10. * [x] sleep - [sleep.js](src/js/es6/sleep.js)
-11. * [x] aop 面向切面编程 - [aop.js](src/js/base/aop.js)
-12. * [ ] bigNumber
-13. * [ ] 深拷贝
-14. * [ ] generator
-15. * [ ] 添加遍历器
-16. * [x] 函数  currying (科里化) && unCurrying - [curry.js](src/js/base/curry.js)
-17. * [ ] 原生 Dom 操作
-18. * [ ] 手写发布订阅（EventBus）
-19. * [ ] vue 双向绑定原理（高阶）
+1. * [x] new - [new.js](src/js/base/new.js)
+2. * [x] call - [call.js](src/js/base/call.js)
+3. * [x] apply - [apply.js](src/js/base/apply.js)
+4. * [x] bind - [bind.js](src/js/base/bind.js)
+5. * [x] 函数  currying (科里化) && unCurrying - [curry.js](src/js/base/curry.js)
+6. * [x] debounce - [debounce.js](src/js/base/debounce.js)
+7. * [x] throttle - [throttle.js](src/js/base/throttle.js)
+8. * [x] aop 面向切面编程 - [aop.js](src/js/base/aop.js)
+9. * [x] XMLHttpRequest - [ajax.js](src/js/base/ajax.js)
+10. * [ ] Jsonp 跨域请求
+11. * [x] sleep - [sleep.js](src/js/es6/sleep.js)
+12. * [ ] 原生 Dom 操作
+13. * [ ] bigNumber
+14. * [ ] 深拷贝
+15. * [x] Promise(符合 Promise / A+ 规范) - [myPromise.js](src/js/es6/myPromise.ts)
+16. * [ ] generator
+17. * [ ] await / async
+18. * [ ] 添加遍历器
+19. * [ ] 手写发布订阅（EventBus）
+20. * [ ] Koa2 简易实现（进阶）
+21. * [ ] vue 双向绑定原理（进阶）
 
 ##### 项目优化
 
