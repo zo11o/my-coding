@@ -25,7 +25,7 @@
 13. * [ ] 原生 Dom 操作
 14. * [ ] bigNumber
 15. * [ ] 深拷贝
-16. * [x] Promise(符合 Promise / A+ 规范) - [myPromise.js](src/js/es6/myPromise.ts)
+16. * [x] Promise(符合 Promise / A+ 规范) - [myPromise.ts](src/js/es6/myPromise.ts)
 17. * [ ] generator
 18. * [ ] await / async
 19. * [ ] 添加遍历器
