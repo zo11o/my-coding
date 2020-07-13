@@ -2,6 +2,8 @@
 
 主要介绍一下前端中高级需要了解的前端手写代码合集, 并且会尽力编写测试用例，如果大家有兴趣可以一起提供测试用例和编码。让我们一同进步
 
+每个目录下有对应的 `index.html` 文件可用于浏览器调试
+
 ### 手写代码
 
 #### Javascript
@@ -18,27 +20,29 @@
 8. * [x] aop 面向切面编程 - [aop.js](src/js/base/aop.js)
 9. * [x] XMLHttpRequest - [ajax.js](src/js/base/ajax.js)
 10. * [ ] Jsonp 跨域请求
-11. * [x] sleep - [sleep.js](src/js/es6/sleep.js)
-12. * [ ] 原生 Dom 操作
-13. * [ ] bigNumber
-14. * [ ] 深拷贝
-15. * [x] Promise(符合 Promise / A+ 规范) - [myPromise.js](src/js/es6/myPromise.ts)
-16. * [ ] generator
-17. * [ ] await / async
-18. * [ ] 添加遍历器
-19. * [ ] 手写发布订阅（EventBus）
-20. * [ ] Koa2 简易实现（进阶）
-21. * [ ] vue 双向绑定原理（进阶）
+11. * [x] cookie 读取、写入和删除 - [cookie.js](src/js/base/cookie.js)
+12. * [x] sleep - [sleep.js](src/js/es6/sleep.js)
+13. * [ ] 原生 Dom 操作
+14. * [ ] bigNumber
+15. * [ ] 深拷贝
+16. * [x] Promise(符合 Promise / A+ 规范) - [myPromise.js](src/js/es6/myPromise.ts)
+17. * [ ] generator
+18. * [ ] await / async
+19. * [ ] 添加遍历器
+20. * [ ] 手写发布订阅（EventBus）
+21. * [ ] Koa2 简易实现（进阶）
+22. * [ ] vue 双向绑定原理（进阶）
 
 ##### 项目优化
 
-1. 大文件上传
-2. 长列表优化
-3. 懒加载实现
+1. * [ ] 大文件上传
+2. * [ ] 长列表优化
+3. * [ ] 懒加载实现
 
 ##### 源码实现
 
-1. react createElement
+1. * [ ] react createElement
+2. * [ ] react hooks
 
 #### CSS 基础
 
