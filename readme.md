@@ -19,7 +19,7 @@
 7. * [x] throttle - [throttle.js](src/js/base/throttle.js)
 8. * [x] aop 面向切面编程 - [aop.js](src/js/base/aop.js)
 9. * [x] XMLHttpRequest - [ajax.js](src/js/base/ajax.js)
-10. * [ ] Jsonp 跨域请求
+10. * [x] Jsonp 跨域请求 - [jsonp.js](src/js/base/jsonp.js)
 11. * [x] cookie 读取、写入和删除 - [cookie.js](src/js/base/cookie.js)
 12. * [x] sleep - [sleep.js](src/js/es6/sleep.js)
 13. * [ ] 原生 Dom 操作
