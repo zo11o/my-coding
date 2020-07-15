@@ -24,7 +24,7 @@
 12. * [x] sleep - [sleep.js](src/js/es6/sleep.js)
 13. * [ ] 原生 Dom 操作
 14. * [ ] bigNumber
-15. * [ ] 深拷贝
+15. * [x] 深拷贝 - [deepClone.js](src/js/base/deepClone.js)
 16. * [x] Promise(符合 Promise / A+ 规范) - [myPromise.ts](src/js/es6/myPromise.ts)
 17. * [ ] generator
 18. * [ ] await / async
