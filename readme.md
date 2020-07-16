@@ -117,7 +117,7 @@ def backtrack(路径, 选择列表):
    1. 单链表
    2. 双向链表
 6. 树 Tree
-   1. 二叉搜索树
+   1. * [x] 二叉搜索树  - [bst.js](src/algorithm/data-structure/bst.ts)
       1. 二叉搜索树的插入
       2. 二叉搜索树的查找
       3. 二叉搜索树的删除

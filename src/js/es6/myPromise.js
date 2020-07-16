@@ -85,7 +85,7 @@ var MyPromise = /** @class */ (function () {
         // 2.2.7.3 If onFulfilled is not a function and promise1 is fulfilled, promise2 must be fulfilled with the same value as promise1.
         onResolved = typeof onResolved === 'function' ? onResolved : function (v) { return v; };
         // 2.2.7.4 If onRejected is not a function and promise1 is rejected, promise2 must be rejected with the same reason as promise1
-        onRejected = typeof onResolved === 'function' ? onRejected : function (r) { throw r; };
+        onRejected = typeof onRejected === 'function' ? onRejected : function (r) { throw r; };
         // 已经是 FULFILLED 状态 执行后续进程
         if (this.currentState === FULFILLED) {
             promise2 = new MyPromise(function (resolve, reject) {
@@ -96,6 +96,20 @@ var MyPromise = /** @class */ (function () {
                     }
                     catch (error) {
                         reject(error);
+                    }
+                });
+            });
+        }
+        // 如果状态还是 Pending 需要
+        if (this.currentState === REJECTED) {
+            promise2 = new MyPromise(function (resolve, reject) {
+                setTimeout(function () {
+                    try {
+                        var x = onRejected(_this.value);
+                        _this.resolutionProcedure(promise2, x, resolve, reject);
+                    }
+                    catch (reason) {
+                        reject(reason);
                     }
                 });
             });
@@ -114,10 +128,17 @@ var MyPromise = /** @class */ (function () {
                     }
                 });
             });
-        }
-        // 如果状态还是 Pending 需要
-        if (this.currentState === REJECTED) {
-            promise2 = new MyPromise(function () {
+            promise2 = new MyPromise(function (resolve, reject) {
+                _this.rejectedCallbacks.push(function () {
+                    try {
+                        var x = onRejected(_this.value);
+                        // 递归等待
+                        _this.resolutionProcedure(promise2, x, resolve, reject);
+                    }
+                    catch (r) {
+                        reject(r);
+                    }
+                });
             });
         }
         return promise2;
@@ -138,6 +159,7 @@ var MyPromise = /** @class */ (function () {
             else {
                 x.then(resolve, reject);
             }
+            return;
         }
         // 保证 resolve 和 rejected 只能有一个被调用
         var called = false;
@@ -177,7 +199,7 @@ var MyPromise = /** @class */ (function () {
 var promise = new MyPromise(function (resolve, reject) {
     setTimeout(function () {
         resolve('hhh');
-    }, 1000);
+    }, 3000);
 });
 promise.then(function (json) {
     console.log(json);
