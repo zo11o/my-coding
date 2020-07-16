@@ -63,6 +63,10 @@
 7. * [ ] 堆排序
 8. * [ ] 计数排序
 
+##### 查找
+
+1. * [x] 二分法查找 - [binarySearch.js](src/algorithm/search/binarySearch.js)
+
 ##### 动态规划
 
 1. * [ ] 斐波那契
