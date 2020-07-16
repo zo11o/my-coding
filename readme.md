@@ -71,7 +71,7 @@
 
 1. * [ ] 斐波那契
 2. * [ ] 爬楼梯
-3. * [ ] [leetcode 120. 三角形最小路径和](https://leetcode-cn.com/problems/triangle/) - [triangle.js](src/algorithm/dp/triangle.js)
+3. * [x] [leetcode 120. 三角形最小路径和](https://leetcode-cn.com/problems/triangle/) - [triangle.js](src/algorithm/dp/triangle.js)
 4. * [ ] 01背包
 
 ##### 贪婪
