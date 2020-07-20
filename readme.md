@@ -66,6 +66,7 @@
 ##### 查找
 
 1. * [x] 二分法查找 - [binarySearch.js](src/algorithm/search/binarySearch.js)
+2. * [x] twoSum 问题 - [twoSum.js](src/algorithm/search/twoSum.js)
 
 ##### 动态规划
 
