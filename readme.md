@@ -29,7 +29,7 @@
 17. * [ ] generator
 18. * [ ] await / async
 19. * [ ] 添加遍历器
-20. * [ ] 手写发布订阅（EventBus）
+20. * [x] 手写发布订阅（EventBus）- [eventBus.ts](src/js/base/eventBus.ts)
 
 ##### 项目优化
 
