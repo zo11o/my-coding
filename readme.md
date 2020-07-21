@@ -118,16 +118,17 @@ def backtrack(路径, 选择列表):
    1. 单链表
    2. 双向链表
 6. 树 Tree
-   1. * [x] 二叉搜索树  - [bst.js](src/algorithm/data-structure/bst.ts)
+   1. * [x] 二叉树的序列化与反序列化 - [serialize.js](src/algorithm/data-structure/serialize.ts)
+   2. * [x] 二叉搜索树 - [bst.js](src/algorithm/data-structure/bst.ts)
       1. 二叉搜索树的插入
       2. 二叉搜索树的查找
       3. 二叉搜索树的删除
       4. 第 K 大的元素
-   2. 平衡二叉树
-   3. B 树 （前端不常考）
-   4. B+ 树 （前端不常考）
-   5. 红黑树 （前端不常考）
-   6. AVL树 （前端不常考）
+   3. 平衡二叉树
+   4. B 树 （前端不常考）
+   5. B+ 树 （前端不常考）
+   6. 红黑树 （前端不常考）
+   7. AVL树 （前端不常考）
 7. 堆（优先队列） Heap
    1. 优先队列
    2. 大顶堆、小顶堆
