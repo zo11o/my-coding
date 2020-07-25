@@ -35,7 +35,7 @@
 
 1. * [ ] 大文件上传
 2. * [ ] 长列表优化
-3. * [ ] 懒加载实现
+3. * [x] 图片懒加载实现）- [/lazy-load/index.js](src/js/optimize/lazy-load/index.js)
 
 ##### 源码实现
 
