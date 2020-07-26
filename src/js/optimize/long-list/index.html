@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>长列表优化</title>
+  <style>
+    .long-list {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .long-list .fragment {
+      position: absolute;
+      left: 0;
+      top: 0;
+      right: 0;
+      z-index: 1;
+      overflow: hidden;
+    }
+
+    .long-list .footer {
+      position: relative;
+    }
+
+    .footer-loading,
+    .footer-loading {
+      padding: 15px;
+      text-align: center;
+    }
+    .item {
+      text-align: center;
+      padding: 50px 0;
+      border: 1px solid #000;
+      background: rgba(90, 197, 247, 0.577);
+    }
+  </style>
+</head>
+
+<body>
+  <div id="root"></div>
+  <script src="https://lib.baomitu.com/vue/2.6.11/vue.js"></script>
+  <script src="./index.js"></script>
+</body>
+
+</html>

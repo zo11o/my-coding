@@ -33,7 +33,7 @@
 
 ##### 项目优化
 
-1. * [ ] 大文件上传
+1. * [ ] 大文件上传- [long-list/index.js](src/js/optimize/long-list/index.js)
 2. * [ ] 长列表优化
 3. * [x] 图片懒加载实现）- [lazy-load/index.js](src/js/optimize/lazy-load/index.js)
 
