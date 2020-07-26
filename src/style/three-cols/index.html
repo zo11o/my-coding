@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>三列布局</title>
+  <style>
+    @keyframes ani {
+      0% {
+        color: red;
+      }
+      50% {
+        color: blue;
+      }
+      100% {
+        color: yellow;
+      }
+    }
+    .mid {
+      background-color:aqua;
+      float: left;
+      width:calc(100% - 440px);
+      margin-left: 220px;
+      margin-right: 220px;
+      animation: ani ease-in-out 2s infinite;
+    }
+    .left{
+      position: absolute;
+      left: 0;
+      width: 220px;
+      background-color:#329471;
+    }
+    .right {
+      position: absolute;
+      right: 0;
+      width: 220px;
+      background-color:#329471;
+    }
+  </style>
+</head>
+<body>
+  <h1>左中右三列布局，左右固定 220px， 中间自适应且先加载 </h1>
+  <div class="mid">
+    <h1>mid</h1>
+    <h1>mid</h1>
+    <h1>mid</h1>
+    <h1>mid</h1>
+    <h1>mid</h1>
+  </div>
+  <div class="left">
+    <h1>left</h1>
+  </div>
+  <div class="right">
+    <h1>right</h1>
+  </div>
+</body>
+</html>
