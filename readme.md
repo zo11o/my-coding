@@ -27,7 +27,7 @@
 15. * [x] 深拷贝 - [deepClone.js](src/js/base/deepClone.js)
 16. * [x] Promise(符合 Promise / A+ 规范) - [myPromise.ts](src/js/es6/myPromise.ts)
 17. * [ ] generator
-18. * [ ] await / async
+18. * [x] await / async - [async.ts](src/js/es6/async.js)
 19. * [ ] 添加遍历器
 20. * [x] 手写发布订阅（EventBus）- [eventBus.ts](src/js/base/eventBus.ts)
 
@@ -48,8 +48,8 @@
 
 1. * [ ] 垂直居中
 2. * [ ] 瀑布流
-3. * [ ] 圣杯布局
-4. * [x] 左中右三列布局，左右固定 220px， 中间自适应且先加载 - [three-cols/index.html](three-cols/index.html) 
+3. * [ ] 圣杯布局 - [grail/index.html](grail/index.html)
+4. * [x] 左中右三列布局，左右固定 220px， 中间自适应且先加载 - [three-cols/index.html](three-cols/index.html)
 
 #### 算法
 
