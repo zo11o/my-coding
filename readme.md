@@ -55,9 +55,9 @@
 
 ##### 排序算法
 
-1. * [ ] 冒泡排序
-2. * [ ] 选择排序
-3. * [ ] 插入排序
+1. * [x] 冒泡排序 - [bubbleSort.js](src/algorithm/sort/bubbleSort.js)
+2. * [x] 选择排序 - [selectSort.js](src/algorithm/sort/selectSort.js)
+3. * [x] 插入排序 - [insertSort.js](src/algorithm/sort/insertSort.js)
 4. * [ ] 希尔排序
 5. * [ ] 归并排序
 6. * [x] 快速排序 - [quickSort.js](src/algorithm/sort/quickSort.js)
