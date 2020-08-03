@@ -1,7 +1,7 @@
 // 归并排序
 // 分治思想的经典体现
 
-// 测试路径：C:mergeSortUsers/yzm_e/Desktop/my-coding/test/algorithm/sort/mergeSort.test.js
+// 测试路径：/my-coding/test/algorithm/sort/mergeSort.test.js
 
 function mergeSort(nums) {
   if (nums.length < 2) {

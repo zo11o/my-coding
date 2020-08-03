@@ -63,6 +63,8 @@
 6. * [x] 快速排序 - [quickSort.js](src/algorithm/sort/quickSort.js)
 7. * [ ] 堆排序
 8. * [ ] 计数排序
+9. * [ ] 基数排序
+10. * [ ] 桶排序
 
 ##### 双指针问题
 
