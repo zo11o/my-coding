@@ -58,17 +58,19 @@
 1. * [x] 冒泡排序 - [bubbleSort.js](src/algorithm/sort/bubbleSort.js)
 2. * [x] 选择排序 - [selectSort.js](src/algorithm/sort/selectSort.js)
 3. * [x] 插入排序 - [insertSort.js](src/algorithm/sort/insertSort.js)
-4. * [ ] 希尔排序
-5. * [ ] 归并排序
+4. * [x] 希尔排序 - [shellSort.js](src/algorithm/sort/shellSort.js)
+5. * [x] 归并排序 - [mergeSort.js](src/algorithm/sort/mergeSort.js)
 6. * [x] 快速排序 - [quickSort.js](src/algorithm/sort/quickSort.js)
 7. * [ ] 堆排序
 8. * [ ] 计数排序
 
-### 双问题
+##### 双指针问题
 
-#### 滑动窗口
+滑动窗口
 
-#### 链表操作
+1. * [ ] 字符串子串问题
+
+链表操作
 
 1. * [ ] 链表成环
 2. * [ ] 链表倒数第 K 个

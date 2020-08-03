@@ -1,6 +1,7 @@
 // 选择排序
 
 // 测试路径 test\algorithm\sort\selectSort.test.js
+
 // 每次保留一个最小的 把最小的放到为排序的第一个
 export default function selectSort(nums) {
 

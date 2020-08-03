@@ -1,5 +1,5 @@
 // 插入排序
-
+// 测试路径 test\algorithm\sort\insertSort.test.js
 export default function insertSort(nums) {
   var len = nums.length;
   for (var i = 0; i <= len - 1; i++) {
@@ -14,7 +14,6 @@ export default function insertSort(nums) {
       nums[j] = temp
     }
   }
-  console.log(nums);
   return nums
 }
 insertSort([34253, 543, 33, 12, 5, 6543, 1234, 33, 211, 4, 66, 1])
