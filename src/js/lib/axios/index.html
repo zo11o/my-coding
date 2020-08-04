@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>手写简易 axios</title>
+  <script src="./myAxios.js"></script>
+</head>
+<body>
+  <button class="btn">发送请求</button>
+  <script>
+
+    // 拦截器的使用
+    // 添加请求拦截器
+    axios.interceptors.request.use(function (config) {
+      // 再请求前做的事
+      console.log("被我请求拦截器拦截了，哈哈:",config);
+      return config
+    }, function (error) {
+      // 请求出错
+      return Promise.reject(error);
+    })
+
+    // 响应拦截器
+    axios.interceptors.response.use(function (response) {
+      // 响应做的事
+      console.log("被我响应拦截拦截了，哈哈 ");
+      return response
+    }, function (error) {
+      return Promise.reject(error)
+    })
+
+    document.querySelector('.btn').onclick = function() {
+        // 分别使用以下方法调用，查看myaxios的效果
+        axios.get('http://localhost:3000/axios/getId', {
+          name: '小美post'
+        }).then(res => {
+          console.log('postAxios 成功响应', res);
+        })
+
+        // axios({
+        //   method: 'get',
+        //   // 根目录下运行 npm run nodemon
+        //   url: 'http://localhost:3000/axios/getId'
+        // }).then(res => {
+        //   console.log('getAxios 成功响应', res);
+        //   var res = JSON.parse(res);
+        //   console.log(res);
+        // })
+    }
+</script>
+</body>
+</html>

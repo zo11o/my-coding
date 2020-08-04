@@ -1,11 +1,17 @@
 const ajax = require('./ajax')
 const home =  require('./home')
 const jsonp =  require('./jsonp')
+const axios = require('./axios')
 
 module.exports = {
   homeView: home.homeView,
   ajaxView: ajax.indexView,
   ajaxGetId: ajax.getId,
   ajaxPostInfo: ajax.postInfo,
-  jsonpGetInfo: jsonp.getInfo
+  jsonpGetInfo: jsonp.getInfo,
+
+  // axios 测试页面
+  axiosView: axios.indexView,
+  axiosGetId: axios.getId,
+  axiosPostInfo: axios.postInfo,
 }
