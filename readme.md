@@ -43,7 +43,7 @@
 2. * [ ] react hooks
 3. * [ ] Koa2 简易实现（进阶）
 4. * [ ] vue 双向绑定原理（进阶）
-5. * [ ] axios 手写实现
+5. * [x] axios 手写实现 - [lazy-load/index.js](src/js/lib/axios/index.html)
 
 #### CSS 基础
 
