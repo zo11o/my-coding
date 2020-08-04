@@ -181,6 +181,7 @@ def backtrack(路径, 选择列表):
 ### 项目要求
 
 * 每个实现都需要通过测试用例
+* git commit 已经使用 commitizen 包管理，我们用 git cz 提交符合 Angular 风格的校验规则
 
 ### 项目使用
 

@@ -5,15 +5,20 @@
   "main": "index.js",
   "scripts": {
     "test": "jest test --coverage",
-    "nodemon": "nodemon ./services/app.js"
+    "nodemon": "nodemon ./services/app.js",
+    "version": "conventional-changelog -p angular -i CHANGELOG.md -s -r 0 && git add CHANGELOG.md"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@commitlint/cli": "^9.1.1",
+    "@commitlint/config-conventional": "^9.1.1",
     "babel-core": "^6.26.3",
     "babel-jest": "^26.0.1",
     "babel-preset-env": "^1.7.0",
+    "conventional-changelog": "^3.1.21",
     "cz-conventional-changelog": "^3.2.0",
+    "husky": "^4.2.5",
     "jest": "^26.0.1",
     "regenerator-runtime": "^0.13.5"
   },
@@ -39,6 +44,11 @@
   "config": {
     "commitizen": {
       "path": "./node_modules/cz-conventional-changelog"
+    }
+  },
+  "husky": {
+    "hooks": {
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
     }
   }
 }
