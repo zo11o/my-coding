@@ -2,6 +2,7 @@ const ajax = require('./ajax')
 const home =  require('./home')
 const jsonp =  require('./jsonp')
 const axios = require('./axios')
+const upload = require('./upload')
 
 module.exports = {
   homeView: home.homeView,
@@ -14,4 +15,9 @@ module.exports = {
   axiosView: axios.indexView,
   axiosGetId: axios.getId,
   axiosPostInfo: axios.postInfo,
+
+  // 大文件上传
+
+  uploadView: upload.indexView,
+  uploadChunk: upload.chunk
 }
