@@ -133,7 +133,6 @@ function CreateAxiosFn() {
 
   // 把 Axios.prototype 的方法填完往 req
   utils.extend(req, Axios.prototype, axios)
-
   // 把Axios上的方法和属性搬到request过去，也就是遍历Axios实例上的方法，得以将interceptors对象挂载到request上
   utils.extend(req, axios)
 

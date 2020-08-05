@@ -29,7 +29,8 @@
 17. * [ ] generator
 18. * [x] await / async - [async.ts](src/js/es6/async.js)
 19. * [ ] 添加遍历器
-20. * [x] 手写发布订阅（EventBus）- [eventBus.ts](src/js/base/eventBus.ts)
+20. * [x] 从 0 到 100 的累加 - [accumulator.js](src/js/base/accumulator.js)
+21. * [x] 手写发布订阅（EventBus）- [eventBus.ts](src/js/base/eventBus.ts)
 
 ##### 项目优化
 
@@ -181,7 +182,7 @@ def backtrack(路径, 选择列表):
 ### 项目要求
 
 * 每个实现都需要通过测试用例
-* git commit 已经使用 commitizen 包管理，我们用 git cz 提交符合 Angular 风格的校验规则
+* git commit 已经使用 commitizen 包管理，我们用 git cz 提交符合 Angular 风格的校验规则 [参考](https://juejin.im/post/6844903831893966856)
 
 ### 项目使用
 
