@@ -17,7 +17,7 @@ module.exports = {
   axiosPostInfo: axios.postInfo,
 
   // 大文件上传
-
   uploadView: upload.indexView,
-  uploadChunk: upload.chunk
+  uploadChunk: upload.chunk,
+  uploadMerge: upload.merge,
 }
