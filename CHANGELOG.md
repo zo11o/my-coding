@@ -1,9 +1,11 @@
-# 1.0.0 (2020-08-05)
+# 1.0.0 (2020-08-07)
 
 
 ### Features
 
 * **js:** 实现一个 0 到 100 的累加 ([96c3569](https://github.com/zo11o/my-coding/commit/96c35690a29e8cf2a4661ddadac248ed52cd22cf))
+* **optimize:** 大文件上传还完成，尚未合并 ([1a1f506](https://github.com/zo11o/my-coding/commit/1a1f50657f7399232da36851b6b131defede41ad))
+* **upload:** 文件上传 ([15dc600](https://github.com/zo11o/my-coding/commit/15dc600824d02424890953640c98f30668760081))
 * 1. readme. 2. ajax ([0d6b0d2](https://github.com/zo11o/my-coding/commit/0d6b0d223e48c5b67dc4c4cbd6ad2a13f9f99ee8))
 * 搭建了koa测试huanj ([c99be0f](https://github.com/zo11o/my-coding/commit/c99be0f9244507526fe4525f7a27836edfcd34e8))
 * 二叉树的序列化与反序列化 ([d721855](https://github.com/zo11o/my-coding/commit/d721855d20dad7236cbbb9b2e57169cbb5b93628))

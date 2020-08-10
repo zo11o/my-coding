@@ -58,7 +58,7 @@ function request({
 
   // -------------------------------------------
 
-  const LENGTH = 2; // 切片数量
+  const LENGTH = 1; // 切片数量
 
   var postData = []
 
@@ -138,12 +138,17 @@ function request({
     })
     .map(async ({ formData }) => {
       request({
-        url: "http://localhost:3000/upload/chunk",
+        // url: "http://localhost:3000/upload/chunk",
+        url: "http://localhost:3000/",
         data: formData
       })
     })
-    console.log(requestList)
-    await Promise.all(requestList); // 并发切片
+    // console.log(requestList)
+    await Promise.all(requestList).then((values) => {
+      console.log(values);
+    }); // 并发切片
+
+    await mergeRequest();
   }
 
   /**
@@ -168,9 +173,10 @@ function request({
 
   async function mergeRequest() {
     await request({
-      url: "http://localhost:3000/upload/merge",
+      // url: "http://localhost:3000/upload/merge",
+      url: "http://localhost:3000/merge",
       headers: {
-        "context-type": 'application/json'
+        "Content-Type": 'application/json;'
       },
       data: JSON.stringify({
         filename: container.file.name
