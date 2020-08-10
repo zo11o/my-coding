@@ -31,10 +31,11 @@
 19. * [ ] 添加遍历器
 20. * [x] 从 0 到 100 的累加 - [accumulator.js](src/js/base/accumulator.js)
 21. * [x] 手写发布订阅（EventBus）- [eventBus.ts](src/js/base/eventBus.ts)
+22. * [x] 获取用户代理 - [userAgent.js](src/js/base/userAgent.js)
 
 ##### 项目优化
 
-1. * [ ] 大文件上传
+1. * [ ] 大文件上传 - [large-upload/index.js](src/js/optimize/large-upload/index.js)
 2. * [ ] 长列表优化 - [long-list/index.js](src/js/optimize/long-list/index.js)
 3. * [x] 图片懒加载实现）- [lazy-load/index.js](src/js/optimize/lazy-load/index.js)
 
