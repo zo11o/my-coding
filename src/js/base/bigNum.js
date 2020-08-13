@@ -28,6 +28,7 @@ var bigNum = {
   },
 
   // 乘法
+  // leetcode: https://leetcode-cn.com/problems/multiply-strings/
   multi: function (num1, num2) {
     if (this.checkNum(num1) && this.checkNum(num2)) {
       let len1 = num1.length,

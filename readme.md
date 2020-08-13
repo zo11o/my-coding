@@ -23,7 +23,7 @@
 11. * [x] cookie 读取、写入和删除 - [cookie.js](src/js/base/cookie.js)
 12. * [x] sleep - [sleep.js](src/js/es6/sleep.js)
 13. * [ ] 原生 Dom 操作
-14. * [x] bigNumber - [bigNum.js](src/js/es6/bigNum.js)
+14. * [x] bigNumber - [bigNum.js](src/js/base/bigNum.js)
 15. * [x] 深拷贝 - [deepClone.js](src/js/base/deepClone.js)
 16. * [x] Promise(符合 Promise / A+ 规范) - [myPromise.ts](src/js/es6/myPromise.ts)
 17. * [ ] generator
