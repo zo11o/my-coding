@@ -69,7 +69,21 @@
 9. * [ ] 基数排序
 10. * [ ] 桶排序
 
+##### 缓存问题
+
+LRU （Least Recently Used）
+
+> LRU 算法就是一种缓存淘汰策略, LRU 的全称是 Least Recently Used，也就是说我们认为最近使用过的数据应该是是「有用的」，很久都没用过的数据应该是无用的，内存满了就优先删那些很久没用过的数据
+
+1. [x] LRU 缓存数据结构设计 - [lru/index.js](src/algorithm/lru/index.js)
+
+LFU 缓存
+
+> LFU
+
 ##### 双指针问题
+
+
 
 滑动窗口
 
