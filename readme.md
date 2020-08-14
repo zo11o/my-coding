@@ -37,7 +37,8 @@
 
 1. * [ ] 大文件上传 - [large-upload/index.js](src/js/optimize/large-upload/index.js)
 2. * [ ] 长列表优化 - [long-list/index.js](src/js/optimize/long-list/index.js)
-3. * [x] 图片懒加载实现）- [lazy-load/index.js](src/js/optimize/lazy-load/index.js)
+3. * [x] 图片懒加载实现 - [lazy-load/index.js](src/js/optimize/lazy-load/index.js)
+4. * [x] JS 图片压缩 - [compress/index.js](src/js/optimize/compress/index.js)
 
 ##### 源码实现
 
@@ -80,6 +81,10 @@ LRU （Least Recently Used）
 LFU 缓存
 
 > LFU
+
+##### 位运算
+
+1. [x] 缺失的数字 - [lru/index.js](src/algorithm/bit/missing-number.js)
 
 ##### 双指针问题
 
