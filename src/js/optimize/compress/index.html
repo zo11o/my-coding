@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JS 图片压缩优化</title>
+</head>
+<body>
+  <h1>JS 图片压缩</h1>
+  <h2>前置知识：Blob 对象</h2>
+  <script src="index.js"></script>
+  <script>
+
+    // image 对象转化为 canvas
+    var image = new Image();
+    image.src = 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1597399899607&di=3d40cba375fa7f11af19603a76409b27&imgtype=0&src=http%3A%2F%2Fcd.arm.tedu.cn%2Fbaidu-ty%2Fweb%2Fimg%2Ftab1.jpg'
+    image.onload = function () {
+      var ctx = image2Canvas(image)
+      console.log(ctx)
+      document.body.append(ctx)
+    }
+
+    // dataURL 转化为 Blob 对象
+    var d = 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQAAAAEACAYAAABccqhmAAAgAElEQVR4XuxdB5g'
+    var blob = dataUrl2Blob(d)
+    console.log(blob);
+  </script>
+</body>
+</html>
