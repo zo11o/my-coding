@@ -32,6 +32,7 @@
 20. * [x] 从 0 到 100 的累加 - [accumulator.js](src/js/base/accumulator.js)
 21. * [x] 手写发布订阅（EventBus）- [eventBus.ts](src/js/base/eventBus.ts)
 22. * [x] 获取用户代理 - [userAgent.js](src/js/base/userAgent.js)
+23. * [x] 数字千位分隔符 - [separate-number/index.js](src/js/base/separate-number/index.js)
 
 ##### 项目优化
 
@@ -76,7 +77,7 @@ LRU （Least Recently Used）
 
 > LRU 算法就是一种缓存淘汰策略, LRU 的全称是 Least Recently Used，也就是说我们认为最近使用过的数据应该是是「有用的」，很久都没用过的数据应该是无用的，内存满了就优先删那些很久没用过的数据
 
-1. [x] LRU 缓存数据结构设计 - [lru/index.js](src/algorithm/lru/index.js)
+1. * [x] LRU 缓存数据结构设计 - [lru/index.js](src/algorithm/lru/index.js)
 
 LFU 缓存
 
@@ -84,7 +85,7 @@ LFU 缓存
 
 ##### 位运算
 
-1. [x] 缺失的数字 - [lru/index.js](src/algorithm/bit/missing-number.js)
+1. * [x] 缺失的数字 - [lru/index.js](src/algorithm/bit/missing-number.js)
 
 ##### 双指针问题
 
@@ -108,6 +109,7 @@ LFU 缓存
 2. * [ ] 爬楼梯
 3. * [x] [leetcode 120. 三角形最小路径和](https://leetcode-cn.com/problems/triangle/) - [triangle.js](src/algorithm/dp/triangle.js)
 4. * [ ] 01背包
+5. * [x] [leetcode 647. 回文子串](https://leetcode-cn.com/problems/palindromic-substrings/) - [palindromic-substrings.js](src/algorithm/dp/palindromic-substrings)
 
 ##### 贪婪
 

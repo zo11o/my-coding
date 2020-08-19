@@ -7,7 +7,7 @@ $start.addEventListener('input', function (e) {
   var endValue = $end.value || 0
   var count = parseFloat(startValue * endValue).toFixed(2);
   $countBefore.innerHTML = count
-  var formatCount =  formatNumber(count)
+  var formatCount = formatNumber(count)
   $count.innerHTML = formatCount
 })
 
@@ -16,12 +16,12 @@ $end.addEventListener('input', function (e) {
   var endValue = $end.value || 0
   var count = parseFloat(startValue * endValue).toFixed(2);
   $countBefore.innerHTML = count
-  var formatCount =  formatNumber(count)
+  var formatCount = formatNumber(count)
   $count.innerHTML = formatCount
 })
 
 
-function formatNumber (num) {
+function formatNumber(num) {
   var regex = /(^-?)(\d+)(\.\d{1,2})?$/
   var matches = regex.exec(num)
   // console.log(matches)
@@ -30,30 +30,30 @@ function formatNumber (num) {
   }
 
   // 整数部分
-  var matches_int = matches[2];
+  var matchesInt = matches[2];
 
   var resultArr = []
-  if (matches_int.length) {
-    var n = matches_int.length - 1;
+  if (matchesInt.length) {
+    var n = matchesInt.length - 1;
     var c = 0;
     while (n >= 0) {
       if (c == 3) {
         resultArr.unshift(',')
         c = 0;
       }
-      resultArr.unshift(matches_int[n])
-      c ++
-      n --
+      resultArr.unshift(matchesInt[n])
+      c++
+      n--
     }
   }
-  var formatCount = resultArr.join('')
+  var format = resultArr.join('')
   if (matches[1]) {
-    formatCount = matches[1] + formatCount
+    format = matches[1] + format
   }
 
   if (matches[3]) {
-    formatCount =  formatCount + matches[3]
+    format = format + matches[3]
   }
 
-  return formatCount
+  return format
 }
