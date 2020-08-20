@@ -151,8 +151,10 @@ def backtrack(路径, 选择列表):
 3. 队列 Queue
 4. 哈希表 HashMap
 5. 链表 NodeList
-   1. 单链表
-   2. 双向链表
+    1. * [x] 单链表 - [list-node.js](src/algorithm/data-structure/list-node/list-node.js)
+    2. * [ ] 双向链表
+    3. * [ ] 循环链表
+   （跳表）
 6. 树 Tree
    1. * [x] 二叉树的序列化与反序列化 - [serialize.js](src/algorithm/data-structure/serialize.ts)
    2. * [x] 二叉搜索树 - [bst.js](src/algorithm/data-structure/bst.ts)
