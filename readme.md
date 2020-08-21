@@ -177,7 +177,7 @@ def backtrack(路径, 选择列表):
    6. 下沉
    7. 堆排序
    8. 最 K 大值的
-8. * [ ] 图 Graph - [graph.js](src/algorithm/data-structure/graph/graph.ts)
+8. * [x] 图 Graph - [graph.ts](src/algorithm/data-structure/graph/graph.ts)
    1. 有向图
    2. 无向图
    3. 顶点和边
