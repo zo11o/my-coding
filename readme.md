@@ -32,6 +32,7 @@
 20. * [x] 从 0 到 100 的累加 - [accumulator.js](src/js/base/accumulator.js)
 21. * [x] 手写发布订阅（EventBus）- [eventBus.ts](src/js/base/eventBus.ts)
 22. * [x] 获取用户代理 - [userAgent.js](src/js/base/userAgent.js)
+23. * [x] 数字千位分隔符 - [separate-number/index.js](src/js/base/separate-number/index.js)
 
 ##### 项目优化
 
@@ -69,6 +70,7 @@
 8. * [ ] 计数排序
 9. * [ ] 基数排序
 10. * [ ] 桶排序
+11. * [ ] 拓扑排序
 
 ##### 缓存问题
 
@@ -76,7 +78,7 @@ LRU （Least Recently Used）
 
 > LRU 算法就是一种缓存淘汰策略, LRU 的全称是 Least Recently Used，也就是说我们认为最近使用过的数据应该是是「有用的」，很久都没用过的数据应该是无用的，内存满了就优先删那些很久没用过的数据
 
-1. [x] LRU 缓存数据结构设计 - [lru/index.js](src/algorithm/lru/index.js)
+1. * [x] LRU 缓存数据结构设计 - [lru/index.js](src/algorithm/lru/index.js)
 
 LFU 缓存
 
@@ -84,7 +86,7 @@ LFU 缓存
 
 ##### 位运算
 
-1. [x] 缺失的数字 - [lru/index.js](src/algorithm/bit/missing-number.js)
+1. * [x] 缺失的数字 - [lru/index.js](src/algorithm/bit/missing-number.js)
 
 ##### 双指针问题
 
@@ -108,6 +110,7 @@ LFU 缓存
 2. * [ ] 爬楼梯
 3. * [x] [leetcode 120. 三角形最小路径和](https://leetcode-cn.com/problems/triangle/) - [triangle.js](src/algorithm/dp/triangle.js)
 4. * [ ] 01背包
+5. * [x] [leetcode 647. 回文子串](https://leetcode-cn.com/problems/palindromic-substrings/) - [palindromic-substrings.js](src/algorithm/dp/palindromic-substrings)
 
 ##### 贪婪
 
@@ -149,8 +152,10 @@ def backtrack(路径, 选择列表):
 3. 队列 Queue
 4. 哈希表 HashMap
 5. 链表 NodeList
-   1. 单链表
-   2. 双向链表
+    1. * [x] 单链表 - [list-node.js](src/algorithm/data-structure/list-node/list-node.ts)
+    2. * [ ] 双向链表
+    3. * [ ] 循环链表
+   （跳表）
 6. 树 Tree
    1. * [x] 二叉树的序列化与反序列化 - [serialize.js](src/algorithm/data-structure/serialize.ts)
    2. * [x] 二叉搜索树 - [bst.js](src/algorithm/data-structure/bst.ts)
@@ -172,10 +177,11 @@ def backtrack(路径, 选择列表):
    6. 下沉
    7. 堆排序
    8. 最 K 大值的
-8. 图 Graph
+8. * [x] 图 Graph - [graph.ts](src/algorithm/data-structure/graph/graph.ts)
    1. 有向图
    2. 无向图
-   3. 边
+   3. 顶点和边
+   4. 邻接表表示 和 邻接矩阵表示
 9. 并查集 Union-Find
 
 #### 设计模式
@@ -210,6 +216,37 @@ SOLID 设计原则
 9. * [ ] 职责链模式
 10. * [ ] 命令行模式
 11. * [ ] 状态模式
+
+### 正则表达式
+
+#### 元字符
+
+|  元字符   | 描述 |
+| ---- | ---- |
+| \ | 转义符 |
+| ^ | 匹配开头 |
+| $ | 匹配结尾 |
+| * | 匹配任意次（0 个或者多个） |
+| + | 匹配 1 次或者多次 |
+| ? | 匹配 0 次或者多次（有或者没有） |
+| . | 匹配所有除"\n" 和 "\r" 的任何单个字符 |
+| {n} | 匹配限定 n 次 |
+| {n,} | 匹配至少 n 次 |
+| {n, m} | 匹配限定 n 到 m 次 |
+| x\|y | 匹配 x 或 y |
+| [xyz] | 字符集合，匹配集合中任意一个 |
+| [a-z] | 字符范围 |
+| [^a-z] | 取反集合 |
+| \s | 匹配任何不可见字符 |
+| \S | 匹配任何可见字符 |
+| \d | 匹配一个数字字符 |
+| \D | 匹配一个非数字字符 |
+| () | 组 |
+| \| | or 运算 |
+| (?=pattern) | 前置匹配 |
+| (?!pattern) | 前置不匹配 |
+| (?<=pattern) | 后置匹配 |
+| (?<!pattern) | 后置不匹配 |
 
 ### 项目要求
 

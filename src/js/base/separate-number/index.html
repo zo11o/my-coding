@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>本文测试千位分隔符</title>
+</head>
+<body>
+
+  <h1>为输入数字通过计算转化为千位分隔的格式，保留两位小数点</h1>
+  <h2>如： 547645.00 -> 547,645.00</h2>
+  <h2>如： 0.00 -> 0.00</h2>
+  <h2>如： 10000.00 -> 10,000.00</h2>
+  <section>
+    <div>
+      <label>
+        请输入单价：
+        <input id="start"/>
+      </label>
+      <br />
+      <label>
+        请输入数量：
+        <input id="end"/>
+      </label>
+      <p>金额：$ <span id="count_before" >0.00</span></p>
+      <p>金额：$ <span id="count">0.00</span></p>
+    </div>
+  </div>
+  <script src="./index.js"></script>
+</body>
+</html>
