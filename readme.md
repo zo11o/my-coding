@@ -22,7 +22,7 @@
 10. * [x] Jsonp 跨域请求 - [jsonp.js](src/js/base/jsonp.js)
 11. * [x] cookie 读取、写入和删除 - [cookie.js](src/js/base/cookie.js)
 12. * [x] sleep - [sleep.js](src/js/es6/sleep.js)
-13. * [ ] 原生 Dom 操作
+13. * [x] Dom事件、事件委托/代理 - [dom.js](src/js/base/dom.js)
 14. * [x] bigNumber - [bigNum.js](src/js/es6/bigNum.js)
 15. * [x] 深拷贝 - [deepClone.js](src/js/base/deepClone.js)
 16. * [x] Promise(符合 Promise / A+ 规范) - [myPromise.ts](src/js/es6/myPromise.ts)
@@ -71,6 +71,10 @@
 9. * [ ] 基数排序
 10. * [ ] 桶排序
 11. * [ ] 拓扑排序
+
+##### 常考
+
+1. * [x] 计算素数 - [primes.js](src/algorithm/base/primes.js)
 
 ##### 缓存问题
 
