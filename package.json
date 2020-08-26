@@ -13,9 +13,9 @@
   "devDependencies": {
     "@commitlint/cli": "^9.1.1",
     "@commitlint/config-conventional": "^9.1.1",
-    "babel-core": "^6.26.3",
+    "@babel/core": "^7.1.0",
     "babel-jest": "^26.0.1",
-    "babel-preset-env": "^1.7.0",
+    "@babel/preset-env": "^7.1.0",
     "conventional-changelog": "^3.1.21",
     "cz-conventional-changelog": "^3.2.0",
     "husky": "^4.2.5",

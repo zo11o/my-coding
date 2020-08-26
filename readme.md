@@ -22,8 +22,8 @@
 10. * [x] Jsonp 跨域请求 - [jsonp.js](src/js/base/jsonp.js)
 11. * [x] cookie 读取、写入和删除 - [cookie.js](src/js/base/cookie.js)
 12. * [x] sleep - [sleep.js](src/js/es6/sleep.js)
-13. * [ ] 原生 Dom 操作
-14. * [x] bigNumber - [bigNum.js](src/js/base/bigNum.js)
+13. * [x] Dom事件、事件委托/代理 - [dom.js](src/js/base/dom.js)
+14. * [x] bigNumber - [bigNum.js](src/js/es6/bigNum.js)
 15. * [x] 深拷贝 - [deepClone.js](src/js/base/deepClone.js)
 16. * [x] Promise(符合 Promise / A+ 规范) - [myPromise.ts](src/js/es6/myPromise.ts)
 17. * [ ] generator
@@ -40,6 +40,7 @@
 2. * [ ] 长列表优化 - [long-list/index.js](src/js/optimize/long-list/index.js)
 3. * [x] 图片懒加载实现 - [lazy-load/index.js](src/js/optimize/lazy-load/index.js)
 4. * [x] JS 图片压缩 - [compress/index.js](src/js/optimize/compress/index.js)
+5. * [ ] 楼栋导航
 
 ##### 源码实现
 
@@ -71,6 +72,10 @@
 9. * [ ] 基数排序
 10. * [ ] 桶排序
 11. * [ ] 拓扑排序
+
+##### 常考
+
+1. * [x] 计算素数 - [primes.js](src/algorithm/base/primes.js)
 
 ##### 缓存问题
 
@@ -137,13 +142,13 @@ def backtrack(路径, 选择列表):
         撤销选择
 ```
 
-##### BFS
+##### BFS && DFS
 
-广度优先算法，主要使用的构建一个 Queue 再遍历 Queue
+BFS: 广度优先算法，主要使用的构建一个 Queue 再遍历 Queue  
+DFS: 深度优先算法，主要是递归  
+一般来说：能用 BFS 解决的遍历都可以用 DFS 解决
 
-##### DFS
-
-深度优先算法，主要是递归
+1. * [x] 电话号码的字母组合 - [letter-combinations.js](src/algorithm/bfs-dfs/letter-combinations.js)
 
 ##### 数据结构
 
@@ -168,7 +173,7 @@ def backtrack(路径, 选择列表):
    5. B+ 树 （前端不常考）
    6. 红黑树 （前端不常考）
    7. AVL树 （前端不常考）
-7. 堆（优先队列） Heap
+7. * [x] 堆（优先队列） Heap - [heap.ts](src/algorithm/data-structure/heap/heap.ts)
    1. 优先队列
    2. 大顶堆、小顶堆
    3. 堆的构建
@@ -252,6 +257,10 @@ SOLID 设计原则
 
 * 每个实现都需要通过测试用例
 * git commit 已经使用 commitizen 包管理，我们用 git cz 提交符合 Angular 风格的校验规则 [参考](https://juejin.im/post/6844903831893966856)
+
+### 面试题
+
+#### 网络：HTTP & TCP & HTTPS & Websocket
 
 ### 项目使用
 
