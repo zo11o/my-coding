@@ -18,7 +18,6 @@ function bubbleSort(arr) {
       break;
     }
   }
-  console.log(arr);
 
   return arr;
 }

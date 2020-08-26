@@ -40,6 +40,7 @@
 2. * [ ] 长列表优化 - [long-list/index.js](src/js/optimize/long-list/index.js)
 3. * [x] 图片懒加载实现 - [lazy-load/index.js](src/js/optimize/lazy-load/index.js)
 4. * [x] JS 图片压缩 - [compress/index.js](src/js/optimize/compress/index.js)
+5. * [ ] 楼栋导航
 
 ##### 源码实现
 
@@ -141,13 +142,13 @@ def backtrack(路径, 选择列表):
         撤销选择
 ```
 
-##### BFS
+##### BFS && DFS
 
-广度优先算法，主要使用的构建一个 Queue 再遍历 Queue
+BFS: 广度优先算法，主要使用的构建一个 Queue 再遍历 Queue  
+DFS: 深度优先算法，主要是递归  
+一般来说：能用 BFS 解决的遍历都可以用 DFS 解决
 
-##### DFS
-
-深度优先算法，主要是递归
+1. * [x] 电话号码的字母组合 - [letter-combinations.js](src/algorithm/bfs-dfs/letter-combinations.js)
 
 ##### 数据结构
 
@@ -256,6 +257,10 @@ SOLID 设计原则
 
 * 每个实现都需要通过测试用例
 * git commit 已经使用 commitizen 包管理，我们用 git cz 提交符合 Angular 风格的校验规则 [参考](https://juejin.im/post/6844903831893966856)
+
+### 面试题
+
+#### 网络：HTTP & TCP & HTTPS & Websocket
 
 ### 项目使用
 

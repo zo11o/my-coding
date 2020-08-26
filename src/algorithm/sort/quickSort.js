@@ -142,5 +142,4 @@ function partition(nums, startIndex, endIndex) {
 
 
 var a = quickSort([5, 1, 4, 2, 2, 1, 5, 3, 23])
-console.log(a);
 export default quickSort;
