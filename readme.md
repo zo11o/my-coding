@@ -173,7 +173,7 @@ DFS: 深度优先算法，主要是递归
    5. B+ 树 （前端不常考）
    6. 红黑树 （前端不常考）
    7. AVL树 （前端不常考）
-7. 堆（优先队列） Heap
+7. * [x] 堆（优先队列） Heap - [heap.ts](src/algorithm/data-structure/heap/heap.ts)
    1. 优先队列
    2. 大顶堆、小顶堆
    3. 堆的构建
