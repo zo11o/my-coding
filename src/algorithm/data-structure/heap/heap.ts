@@ -87,8 +87,10 @@ class MinHeap<T> {
     return (index - 1) >> 1
   }
 
-  // 插入函数
-
+  /**
+   * 插入函数
+   * @param value
+   */
   insert (value: T): boolean {
     if (value != null) {
       // 向对的叶节点添加元素，即数组尾部
@@ -100,6 +102,10 @@ class MinHeap<T> {
     return false;
   }
 
+  /**
+   * 上浮
+   * @param index
+   */
   protected shiftUp (index: number): void {
     // 获取父节点位置
     let parent = this.getParentIndex(index);
@@ -115,6 +121,12 @@ class MinHeap<T> {
     }
   }
 
+  /**
+   * 换位
+   * @param array
+   * @param i
+   * @param j
+   */
   protected swap (array: T[], i: number, j: number): void {
     const temp = array[i];
     array[i] = array[j]
@@ -129,14 +141,23 @@ class MinHeap<T> {
     return this.isEmpty() ? undefined : this.heap[0]
   }
 
+  /**
+   * 是否为空
+   */
   isEmpty (): boolean {
     return this.size() === 0
   }
 
+  /**
+   * 长度
+   */
   size (): number {
     return this.heap.length;
   }
 
+  /**
+   * 移除最小节点
+   */
   extract (): T | undefined {
     if (this.isEmpty()) {
       return undefined;
@@ -153,6 +174,10 @@ class MinHeap<T> {
     return removeValue;
   }
 
+  /**
+   * 下层
+   * @param index
+   */
   shiftDown (index: number): void {
     // 保存当前插入值得位置
     let element = index;
