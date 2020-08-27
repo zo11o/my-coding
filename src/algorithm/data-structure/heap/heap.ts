@@ -1,3 +1,7 @@
+/**
+ * 数据结构： 堆
+ */
+
 // 定义比对函数的参数类型以及返回值类型
 type ICompareFunction<T> = (a: T, b: T) => number;
 
@@ -189,7 +193,7 @@ class MinHeap<T> {
       element = left
     }
 
-    if (right < size && this.compareFn(this.heap[element], this.heap[right]) === Compare.LESS_THAN) {
+    if (right < size && this.compareFn(this.heap[element], this.heap[right]) === Compare.BIGGER_THAN) {
       element = right
     }
 

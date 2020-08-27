@@ -67,7 +67,7 @@
 4. * [x] 希尔排序 - [shellSort.js](src/algorithm/sort/shellSort.js)
 5. * [x] 归并排序 - [mergeSort.js](src/algorithm/sort/mergeSort.js)
 6. * [x] 快速排序 - [quickSort.js](src/algorithm/sort/quickSort.js)
-7. * [ ] 堆排序
+7. * [x] 堆排序 - [heapSort.js](src/algorithm/sort/heapSort.js)
 8. * [ ] 计数排序
 9. * [ ] 基数排序
 10. * [ ] 桶排序
