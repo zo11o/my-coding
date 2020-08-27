@@ -253,26 +253,47 @@ SOLID 设计原则
 | (?<=pattern) | 后置匹配 |
 | (?<!pattern) | 后置不匹配 |
 
+### 面试题
+
+#### 网络：HTTP & TCP & HTTPS & Websocket
+
+1. * [ ] TCP: 拥塞窗口，流量控制，快速重传，超时重传
+2. * [ ] HTTP
+   1. 预请求
+   2. HTTP1.1
+   3. HTTP2.0
+
 ### 项目要求
 
 * 每个实现都需要通过测试用例
 * git commit 已经使用 commitizen 包管理，我们用 git cz 提交符合 Angular 风格的校验规则 [参考](https://juejin.im/post/6844903831893966856)
 
-### 面试题
-
-#### 网络：HTTP & TCP & HTTPS & Websocket
-
 ### 项目使用
 
-本项目已经搭建了 koa2 服务器，可以用于网络请求
-Koa2 服务的目录为 `/services`
+#### 服务端
 
-本地开发开启 Koa2 服务:
-根目录下运行: `node run nodemon`
+项目有一些章节需要用到网络请求，如手写`原生 Ajax`， `跨域请求`等
+
+本项目已经搭建了 `koa2` 服务器，可以用于网络请求
+`Koa2` 服务的目录为 `/services`
+
+本地开发开启 `Koa2` 服务:
+根目录下运行:
+
+```shell
+node run nodemon
+```
 
 如果需要添加路由:
 
 1. `/services/routes/index.js` 添加路由文件
 2. `/services/controllers` 编写路由控制器
+
+#### 运行测试用例
+
+```shell
+// 根目录下
+npm run test
+```
 
 [项目链接：https://github.com/zo11o/my-coding](https://github.com/zo11o/my-coding)
