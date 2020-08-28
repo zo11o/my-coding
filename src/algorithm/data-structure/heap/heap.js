@@ -1,4 +1,7 @@
 "use strict";
+/**
+ * 数据结构： 堆
+ */
 // 枚举类：定义比对返回值
 var Compare;
 (function (Compare) {
@@ -73,7 +76,10 @@ var MinHeap = /** @class */ (function () {
         // }
         return (index - 1) >> 1;
     };
-    // 插入函数
+    /**
+     * 插入函数
+     * @param value
+     */
     MinHeap.prototype.insert = function (value) {
         if (value != null) {
             // 向对的叶节点添加元素，即数组尾部
@@ -84,6 +90,10 @@ var MinHeap = /** @class */ (function () {
         }
         return false;
     };
+    /**
+     * 上浮
+     * @param index
+     */
     MinHeap.prototype.shiftUp = function (index) {
         // 获取父节点位置
         var parent = this.getParentIndex(index);
@@ -95,6 +105,12 @@ var MinHeap = /** @class */ (function () {
             parent = this.getParentIndex(index);
         }
     };
+    /**
+     * 换位
+     * @param array
+     * @param i
+     * @param j
+     */
     MinHeap.prototype.swap = function (array, i, j) {
         var temp = array[i];
         array[i] = array[j];
@@ -107,12 +123,21 @@ var MinHeap = /** @class */ (function () {
         //  返回数组的最小元素
         return this.isEmpty() ? undefined : this.heap[0];
     };
+    /**
+     * 是否为空
+     */
     MinHeap.prototype.isEmpty = function () {
         return this.size() === 0;
     };
+    /**
+     * 长度
+     */
     MinHeap.prototype.size = function () {
         return this.heap.length;
     };
+    /**
+     * 移除最小节点
+     */
     MinHeap.prototype.extract = function () {
         if (this.isEmpty()) {
             return undefined;
@@ -125,6 +150,10 @@ var MinHeap = /** @class */ (function () {
         this.shiftDown(0);
         return removeValue;
     };
+    /**
+     * 下层
+     * @param index
+     */
     MinHeap.prototype.shiftDown = function (index) {
         // 保存当前插入值得位置
         var element = index;
@@ -134,7 +163,7 @@ var MinHeap = /** @class */ (function () {
         if (left < size && this.compareFn(this.heap[element], this.heap[left]) === Compare.BIGGER_THAN) {
             element = left;
         }
-        if (right < size && this.compareFn(this.heap[element], this.heap[right]) === Compare.LESS_THAN) {
+        if (right < size && this.compareFn(this.heap[element], this.heap[right]) === Compare.BIGGER_THAN) {
             element = right;
         }
         if (index !== element) {
