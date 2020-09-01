@@ -116,6 +116,7 @@ LFU 缓存
 3. * [x] [leetcode 120. 三角形最小路径和](https://leetcode-cn.com/problems/triangle/) - [triangle.js](src/algorithm/dp/triangle.js)
 4. * [ ] 01背包
 5. * [x] [leetcode 647. 回文子串](https://leetcode-cn.com/problems/palindromic-substrings/) - [palindromic-substrings.js](src/algorithm/dp/palindromic-substrings)
+6. * [ ] [leetcode 486. 预测赢家](https://leetcode-cn.com/problems/predict-the-winner/)
 
 ##### 贪婪
 
