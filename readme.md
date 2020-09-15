@@ -144,7 +144,9 @@ def backtrack(路径, 选择列表):
 ```
 
 1. * [x] 全排列问题 - [permute.js](src/algorithm/backtrack/permute.js)
-1. * [ ] N皇后问题
+2. * [ ] N皇后问题
+3. * [x] 子集 - [subsets.js](src/algorithm/backtrack/subsets.js)
+4. * [ ] 组合 - [combine.js](src/algorithm/backtrack/combine.js)
 
 ##### BFS && DFS
 
