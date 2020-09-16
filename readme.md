@@ -17,7 +17,7 @@
 5. * [x] 函数  currying (科里化) && unCurrying - [curry.js](src/js/base/curry.js)
 6. * [x] debounce - [debounce.js](src/js/base/debounce.js)
 7. * [x] throttle - [throttle.js](src/js/base/throttle.js)
-8. * [x] aop 面向切面编程 - [aop.js](src/js/base/aop.js)
+8. * [x] aop 面向切面编程 - [aop.js]( src/js/base/aop.js)
 9. * [x] XMLHttpRequest - [ajax.js](src/js/base/ajax.js)
 10. * [x] Jsonp 跨域请求 - [jsonp.js](src/js/base/jsonp.js)
 11. * [x] cookie 读取、写入和删除 - [cookie.js](src/js/base/cookie.js)
