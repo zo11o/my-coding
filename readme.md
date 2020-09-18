@@ -113,10 +113,11 @@ LFU 缓存
 
 1. * [ ] 斐波那契
 2. * [ ] 爬楼梯
-3. * [x] [leetcode 120. 三角形最小路径和](https://leetcode-cn.com/problems/triangle/) - [triangle.js](src/algorithm/dp/triangle.js)
-4. * [ ] 01背包
-5. * [x] [leetcode 647. 回文子串](https://leetcode-cn.com/problems/palindromic-substrings/) - [palindromic-substrings.js](src/algorithm/dp/palindromic-substrings)
-6. * [ ] [leetcode 486. 预测赢家](https://leetcode-cn.com/problems/predict-the-winner/)
+3. * [x] [leetcode 53. 最大子序列](https://leetcode-cn.com/problems/maximum-subarray/) - [triangle.js](src/algorithm/dp/maximum-subarray.js)
+4. * [x] [leetcode 120. 三角形最小路径和](https://leetcode-cn.com/problems/triangle/) - [triangle.js](src/algorithm/dp/triangle.js)
+5. * [ ] 01背包
+6. * [x] [leetcode 647. 回文子串](https://leetcode-cn.com/problems/palindromic-substrings/) - [palindromic-substrings.js](src/algorithm/dp/palindromic-substrings)
+7. * [ ] [leetcode 486. 预测赢家](https://leetcode-cn.com/problems/predict-the-winner/)
 
 ##### 贪婪
 
@@ -143,11 +144,12 @@ def backtrack(路径, 选择列表):
         撤销选择
 ```
 
-1. * [x] 全排列问题 - [permute.js](src/algorithm/backtrack/permute.js)
-2. * [ ] N皇后问题
-3. * [x] 子集 - [subsets.js](src/algorithm/backtrack/subsets.js)
-4. * [x] 组合 - [combine.js](src/algorithm/backtrack/combine.js)
-5. * [x] 解数独 - [solveSudoku.js](src/algorithm/backtrack/solveSudoku.js)
+1. * [x] 全排列问题(数字不重复) - [permute.js](src/algorithm/backtrack/permute.js)
+2. * [x] 全排列问题(数字可重复) - [permute.js](src/algorithm/backtrack/permuteUnique.js)
+3. * [ ] N皇后问题
+4. * [x] 子集 - [subsets.js](src/algorithm/backtrack/subsets.js)
+5. * [x] 组合 - [combine.js](src/algorithm/backtrack/combine.js)
+6. * [x] 解数独 - [solveSudoku.js](src/algorithm/backtrack/solveSudoku.js)
 
 ##### BFS && DFS
 

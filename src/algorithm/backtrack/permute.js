@@ -2,6 +2,7 @@
 
 // [leetcode] 46.全排列: https://leetcode-cn.com/problems/permutations/
 
+
 // 输入: [1,2,3]
 // 输出:
 // [
@@ -45,6 +46,5 @@ function permute(nums) {
   return result;
 }
 
-var ans = permute([1,2,3])
+var ans = permute([1, 2, 3])
 console.log(ans)
-
