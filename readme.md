@@ -145,7 +145,7 @@ def backtrack(路径, 选择列表):
 ```
 
 1. * [x] 全排列问题(数字不重复) - [permute.js](src/algorithm/backtrack/permute.js)
-2. * [x] 全排列问题(数字可重复) - [permute.js](src/algorithm/backtrack/permuteUnique.js)
+2. * [x] 全排列问题(数字可重复) - [permuteUnique.js](src/algorithm/backtrack/permuteUnique.js)
 3. * [ ] N皇后问题
 4. * [x] 子集 - [subsets.js](src/algorithm/backtrack/subsets.js)
 5. * [x] 组合 - [combine.js](src/algorithm/backtrack/combine.js)
