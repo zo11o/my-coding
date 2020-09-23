@@ -158,8 +158,8 @@ DFS: 深度优先算法，主要是递归
 一般来说：能用 BFS 解决的遍历都可以用 DFS 解决
 
 1. * [x] [leetcode 538. 把二叉搜索树转换为累加树](https://leetcode-cn.com/problems/convert-bst-to-greater-tree/)  - [convert-bst-to-greater-tree](src/algorithm/bfs-dfs/convert-bst-to-greater-tree.js)
-
-1. * [x] 电话号码的字母组合 - [letter-combinations.js](src/algorithm/bfs-dfs/letter-combinations.js)
+2. * [x] 电话号码的字母组合 - [letter-combinations.js](src/algorithm/bfs-dfs/letter-combinations.js)
+3. * [x] 合并二叉树 - [mergeTrees.js](src/algorithm/bfs-dfs/mergeTrees.js)
 
 ##### 数据结构
 
