@@ -178,6 +178,7 @@ DFS: 深度优先算法，主要是递归
       1. * [x] 二叉树的深度 - [maxDepth.js](src/algorithm/data-structure/binary-tree/maxDepth.js)
       2. * [x] 是否平衡二叉树 - [isBalanced.js](src/algorithm/data-structure/binary-tree/isBalanced.js)
       3. * [x] 对称的二叉树 - [isSymmetric.js](src/algorithm/data-structure/binary-tree/isSymmetric.js)
+      4. * [x] 从中序遍历和后序遍历构建二叉树 - [buildTree.js](src/algorithm/data-structure/binary-tree/buildTree.js)
    3. * [x] 二叉搜索树 - [bst.js](src/algorithm/data-structure/binary-tree/bst.ts)
       1. 二叉搜索树的插入
       2. 二叉搜索树的查找
