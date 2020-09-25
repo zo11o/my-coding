@@ -174,16 +174,20 @@ DFS: 深度优先算法，主要是递归
    （跳表）
 6. 树 Tree
    1. * [x] 二叉树的序列化与反序列化 - [serialize.js](src/algorithm/data-structure/serialize.ts)
-   2. * [x] 二叉搜索树 - [bst.js](src/algorithm/data-structure/bst.ts)
+   2. * [x] 二叉树
+      1. * [x] 二叉树的深度 - [maxDepth.js](src/algorithm/data-structure/binary-tree/maxDepth.js)
+      2. * [x] 是否平衡二叉树 - [isBalanced.js](src/algorithm/data-structure/binary-tree/isBalanced.js)
+      3. * [x] 对称的二叉树 - [isSymmetric.js](src/algorithm/data-structure/binary-tree/isSymmetric.js)
+   3. * [x] 二叉搜索树 - [bst.js](src/algorithm/data-structure/binary-tree/bst.ts)
       1. 二叉搜索树的插入
       2. 二叉搜索树的查找
       3. 二叉搜索树的删除
       4. 第 K 大的元素
-   3. 平衡二叉树
-   4. B 树 （前端不常考）
-   5. B+ 树 （前端不常考）
-   6. 红黑树 （前端不常考）
-   7. AVL树 （前端不常考）
+   4. 平衡二叉树
+   5. B 树 （前端不常考）
+   6. B+ 树 （前端不常考）
+   7. 红黑树 （前端不常考）
+   8. AVL树 （前端不常考）
 7. * [x] 堆（优先队列） Heap - [heap.ts](src/algorithm/data-structure/heap/heap.ts)
    1. 优先队列
    2. 大顶堆、小顶堆

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>调试代码</title>
+</head>
+<body>
+  <script>
+    // 调试闭包
+    function a() {
+      var a = 'a'
+      function b() {
+        var b = 'b'
+        a = 'ba'
+        function c() {
+          var c = 'c'
+          console.log(b)
+        }
+        c();
+        console.dir(c);
+      }
+      b();
+      console.dir(b)
+    }
+    a();
+    console.dir(a)
+
+  </script>
+</body>
+</html>
