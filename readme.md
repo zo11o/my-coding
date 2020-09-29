@@ -164,9 +164,13 @@ DFS: 深度优先算法，主要是递归
 ##### 数据结构
 
 1. 栈 Stack
+   1. * [x] 栈数据结构的实现 - [stack.ts](src/algorithm/data-structure/stack/stack.ts)
 2. 数组 Array
+   1. * [x] 由于 js 原生实现了数组，所以这里不冗余实现
 3. 队列 Queue
+   1. * [x] 队列数据结构的实现 - [queue.ts](src/algorithm/data-structure/queue/queue.ts)
 4. 哈希表 HashMap
+   1. * [x] js 中的对象和 ES6 中的新数据类型 set 都可以是 HashMap 数据结构
 5. 链表 NodeList
     1. * [x] 单链表 - [list-node.js](src/algorithm/data-structure/list-node/list-node.ts)
     2. * [ ] 双向链表
@@ -203,7 +207,7 @@ DFS: 深度优先算法，主要是递归
    2. 无向图
    3. 顶点和边
    4. 邻接表表示 和 邻接矩阵表示
-9. * [x] 并查集UF Union-Find - [union-find/uf.ts](src/algorithm/data-structure/union-find/uf.ts)
+9.  * [x] 并查集UF Union-Find - [union-find/uf.ts](src/algorithm/data-structure/union-find/uf.ts)
     1. 实现 API
        1. `union()`  连接两个节点
        2. `connected()` 判断两个节点是否连通
