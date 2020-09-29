@@ -341,3 +341,352 @@ console.log(obj.b.e)
 
 // 本文参考:
 // lodash 源码 https://github.com/lodash/lodash
+
+
+/************************************************************/
+/**
+ * 手动实现一个深克隆(考虑日期/正则等特殊对象 和 解决循环引用情况)
+ */
+var simpleDeepClone = (function () {
+
+  /**
+   * 判断是否对象
+   * @param {any} target any
+   */
+  const isObject = (target) => {
+    return target !== null && (typeof target === "object" && typeof target === "function")
+  }
+
+
+  // 为什么要这样做呢？，先来看看WeakMap的作用：
+  // WeakMap 对象是一组键/值对的集合，其中的键是弱引用的。
+  // 其键必须是对象，而值可以是任意的。
+
+  // 什么是弱引用呢？
+  // 在计算机程序设计中，弱引用与强引用相对，是指不能确保其引用的对象不会被垃圾回收器回收的引用。
+  // 一个对象若只被弱引用所引用，则被认为是不可访问（或弱可访问）的，并因此可能在任何时刻被回收。
+
+  function deepClone(target, map = new WeakMap()) {
+    // 是否被引用过 解决爆栈问题
+    if (map.get(target)) {
+      return target
+    }
+
+    // 获取当前值的构造函数：获取它的类型
+    let constructor = target.constructor;
+
+    // 检测当前对象target是否与 正则、日期格式对象匹配
+    if (/^(RegExp|Date)$/i.test(constructor.name)) {
+      return new constructor(target); // 创建一个新的特殊对象(正则类/日期类)的实例
+    }
+
+    if (isObject(target)) {
+      map.set(target, true); // 为循环引用的对象做标记
+      const cloneTarget = Array.isArray(target) ? [] : {};
+      for (let prop in target) {
+        if (target.hasOwnProperty(prop)) {
+          cloneTarget[prop] = deepClone(target[prop], map);
+        }
+      }
+      return cloneTarget;
+    } else {
+      return target;
+    }
+  }
+
+  return deepClone
+
+})()
+
+var a = {
+  a: a,
+  b: '32',
+  c: {
+    a: 1,
+    b: a
+  }
+}
+
+var sd = simpleDeepClone([21, {
+  a: a,
+  b: {
+    c: a
+  }
+}, 12321, ['33', {
+  c: '23423'
+}]])
+
+console.log(sd)
+
+
+/****************************************************************/
+
+// 以下实现参考链接
+// 作者：ConardLi
+// 链接：https://juejin.im/post/6844903929705136141
+// 来源：掘金
+
+var cloneDeep = (function () {
+
+  // 一个合格的深拷贝需要考虑的问题
+  // 1. 循环引用（爆栈）问题
+  // 2. 数组问题
+  // 3. 性能问题（执行效率）问题 WeakMap. for while
+  // 4. 数据类型问题
+  //    可遍历：map, set, array, object
+  //    不可遍历：boolean, date, error, number, regexp, string, symbol
+  // 5. 克隆函数
+
+  // 可循环类型
+  const mapTag = "[object Map]"
+  const setTag = "[object Set]"
+  const arrayTag = "[object Array]"
+  const objectTag = "[object Object]"
+  const argsTag = '[object Arguments]';
+
+  // 不可循环类型
+  const booleanTag = "[object Boolean]"
+  const dateTag = "[object Date]"
+  const errorTag = "[object Error]"
+  const numberTag = "[object Number]"
+  const regexpTag = "[object RegExp]"
+  const stringTag = "[object String]"
+  const symbolTag = "[object Symbol]"
+  const funcTag = '[object Function]';
+
+  // 需要深度遍历的
+  const deepTag = [mapTag, setTag, arrayTag, objectTag, argsTag];
+
+  const isObject = (target) => {
+    const type = typeof target;
+    return type !== null && (type === 'object' || type === 'function');
+  }
+
+  /**
+   * 合理的类型判断
+   * @param {*} target
+   */
+  const getType = (target) => {
+    return Object.prototype.toString.call(target)
+  }
+
+  const forEach = (arr, fn) => {
+    let index = -1;
+    const len = arr.length
+    while (++index < arr.length) {
+      fn(arr[index], index);
+    }
+    return arr;
+  }
+
+  const getInit = (target) => {
+    let Ctor = target.constructor;
+    return new Ctor();
+  }
+
+  const cloneRegExp = (target) => {
+    //标志参数 i m g
+    const reFlags = /\w*$/;
+    // RegExp.prototype.source: 正则表达式的文本。
+    const result = new target.constructor(target.source, reFlags.exec(target));
+    // 该索引表示从哪里开始下一个匹配
+    result.lastIndex = target.lastIndex;
+    return result;
+  }
+
+  const cloneSymbol = (target) => {
+    const symbolValueOf = Symbol.prototype.valueOf;
+    return symbolValueOf ? Object(symbolValueOf.call(target)) : {};
+  }
+
+  const cloneFunction = (target) => {
+    return target
+  }
+
+  const cloneOtherType = (target, type) => {
+    const Ctor = target.constructor;
+
+    switch (type) {
+      case booleanTag:
+      case numberTag:
+      case stringTag:
+      case errorTag:
+      case dateTag:
+        return new Ctor(target);
+      case regexpTag:
+        return cloneRegExp(target)
+      case symbolTag:
+        return cloneSymbol(target)
+      case funcTag:
+        return cloneFunction(target);
+      default:
+        return null;
+    }
+
+  }
+
+  // new WeakMap 解决爆栈问题： 关键词： 键必须是对象 弱引用 随时被回收
+  function _clone(target, map = new WeakMap()) {
+    if (!isObject(target) || target == null) {
+      return target;
+    }
+
+    // 防止循环
+    if (map.has(target)) {
+      return map.get(target);
+    }
+
+    let cloneTarget
+    const type = getType(target)
+    if (deepTag.includes(type)) {
+      cloneTarget = getInit(target, type)
+    } else {
+      return cloneOtherType(target, type);
+    }
+
+    map.set(target, cloneTarget);
+    // for (const key in target) {
+    //   cloneTarget[key] = _clone(target[key], map);
+    // }
+
+    // clone set
+    if (type === setTag) {
+      target.forEach(value => {
+        cloneTarget.add(_clone(value, map));
+      })
+      return cloneTarget
+    }
+
+    // clone map
+    if (type === mapTag) {
+      target.forEach((value, key) => {
+        cloneTarget.set(key, _clone(value, map));
+      })
+      return cloneTarget
+    }
+
+    // clone arry || object
+    // var keys = type === arrayTag ? null : Object.keys(target)
+    // forEach(keys || target, (value, key) => {
+    //   if (keys) {
+    //     key = value;
+    //   }
+    //   cloneTarget[key] = _clone(target[key], map);
+    // })
+
+    for (const key in target) {
+      cloneTarget[key] = _clone(target[key], map);
+    }
+
+    return cloneTarget;
+  }
+
+  return _clone;
+})();
+
+// 测试用例
+// const target = {
+//   field1: 1,
+//   field2: undefined,
+//   field3: {
+//     child: 'child'
+//   },
+//   field4: [2, 4, 8],
+//   f: {
+//     f: {
+//       f: {
+//         f: {
+//           f: {
+//             f: {
+//               f: {
+//                 f: {
+//                   f: {
+//                     f: {
+//                       f: {
+//                         f: {}
+//                       }
+//                     }
+//                   }
+//                 }
+//               }
+//             }
+//           }
+//         }
+//       }
+//     }
+//   },
+// };
+
+// target.target = target;
+
+// console.time();
+// const result = simpleDeepClone(target);
+// console.timeEnd();
+
+// console.time();
+// const result2 = cloneDeep(target);
+// console.log(result2)
+// console.timeEnd();
+
+
+// const map1 = new Map();
+// map1.set('key', 'value');
+// map1.set('ConardLi', 'code秘密花园');
+
+// const set = new Set();
+// set.add('ConardLi');
+// set.add('code秘密花园');
+
+// const target = {
+//   field1: 1,
+//   field2: undefined,
+//   field3: {
+//     child: 'child'
+//   },
+//   field4: [2, 4, 8],
+//   empty: null,
+//   map1,
+//   set,
+// };
+
+
+// const result = clone(target);
+
+// console.log(result);
+// console.log(result.map === target.map);
+
+
+const map1 = new Map();
+map1.set('key', 'value');
+map1.set('ConardLi', 'code秘密花园');
+
+const set = new Set();
+set.add('ConardLi');
+set.add('code秘密花园');
+
+const target = {
+    field1: 1,
+    field2: undefined,
+    field3: {
+        child: 'child'
+    },
+    field4: [2, 4, 8],
+    empty: null,
+    map,
+    set,
+    bool: new Boolean(true),
+    num: new Number(2),
+    str: new String(2),
+    symbol: Object(Symbol(1)),
+    date: new Date(),
+    reg: /\d+/,
+    error: new Error(),
+    func1: () => {
+        console.log('code秘密花园');
+    },
+    func2: function (a, b) {
+        return a + b;
+    }
+};
+
+console.log(cloneDeep(target))
