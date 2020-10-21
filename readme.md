@@ -33,6 +33,8 @@
 21. * [x] 手写发布订阅（EventBus）- [eventBus.ts](src/js/base/eventBus.ts)
 22. * [x] 获取用户代理 - [userAgent.js](src/js/base/userAgent.js)
 23. * [x] 数字千位分隔符 - [separate-number/index.js](src/js/base/separate-number/index.js)
+24. * [x] possMessage 通讯 - [possMessage/index.js](src/js/base/possMessage/index.js)
+25. * [x] Object.is 判断两个变量相等 - [is.js](src/js/base/is.js)
 
 ##### 项目优化
 
@@ -103,6 +105,7 @@ LFU 缓存
 
 1. * [ ] 链表成环
 2. * [ ] 链表倒数第 K 个
+3. * [ ] 链表找中点
 
 ##### 查找
 
@@ -174,8 +177,11 @@ DFS: 深度优先算法，主要是递归
 5. 链表 NodeList
     1. * [x] 单链表 - [list-node.js](src/algorithm/data-structure/list-node/list-node.ts)
     2. * [ ] 双向链表
-    3. * [ ] 循环链表
-   （跳表）
+    3. * [ ] 循环链表（跳表）
+    4. 链表常规操作
+       1. * [x] 找中点 - [middle.js](src/algorithm/data-structure/list-node/middle.js)
+       2. * [x] 翻转链表 - [reverse.js](src/algorithm/data-structure/list-node/reverse.js)
+       3. * [ ] 合并链表
 6. 树 Tree
    1. * [x] 二叉树的序列化与反序列化 - [serialize.js](src/algorithm/data-structure/serialize.ts)
    2. * [x] 二叉树
