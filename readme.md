@@ -35,6 +35,7 @@
 23. * [x] 数字千位分隔符 - [separate-number/index.js](src/js/base/separate-number/index.js)
 24. * [x] possMessage 通讯 - [possMessage/index.js](src/js/base/possMessage/index.js)
 25. * [x] Object.is 判断两个变量相等 - [is.js](src/js/base/is.js)
+26. * [x] 不产生新数组去重 - [removeDuplicates.js](src/js/base/removeDuplicates.js)
 
 ##### 项目优化
 
@@ -311,6 +312,7 @@ SOLID 设计原则
    3. HTTP2.0
 
 ### 项目要求
+
 
 * 每个实现都需要通过测试用例
 * git commit 已经使用 commitizen 包管理，我们用 git cz 提交符合 Angular 风格的校验规则 [参考](https://juejin.im/post/6844903831893966856)
