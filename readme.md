@@ -311,6 +311,12 @@ SOLID 设计原则
    2. HTTP1.1
    3. HTTP2.0
 
+#### 工程化
+
+##### webpack
+
+1. webpack 的打包大致流程
+2. [你的 import 被 webpack 编译成什么了 - 李永宁](https://juejin.cn/post/6859569958742196237)
 ### 项目要求
 
 
