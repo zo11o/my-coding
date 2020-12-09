@@ -315,8 +315,10 @@ SOLID 设计原则
 
 ##### webpack
 
-1. webpack 的打包大致流程
+1. [webpack 自己总结笔记](note/webpack.md)
 2. [你的 import 被 webpack 编译成什么了 - 李永宁](https://juejin.cn/post/6859569958742196237)
+3. [深入Webpack-编写Loader - 浩麟](https://juejin.cn/post/6844903545242648589)
+
 ### 项目要求
 
 
