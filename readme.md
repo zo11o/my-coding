@@ -214,7 +214,7 @@ DFS: 深度优先算法，主要是递归
    2. 无向图
    3. 顶点和边
    4. 邻接表表示 和 邻接矩阵表示
-9.  * [x] 并查集UF Union-Find - [union-find/uf.ts](src/algorithm/data-structure/union-find/uf.ts)
+9. * [x] 并查集UF Union-Find - [union-find/uf.ts](src/algorithm/data-structure/union-find/uf.ts)
     1. 实现 API
        1. `union()`  连接两个节点
        2. `connected()` 判断两个节点是否连通
@@ -290,6 +290,12 @@ SOLID 设计原则
 | (?!pattern)  | 前置不匹配                            |
 | (?<=pattern) | 后置匹配                              |
 | (?<!pattern) | 后置不匹配                            |
+| \1           | 反模式（捕获组）                      |
+#### 正则匹配优化
+
+1. 我们需要尽可能的去让我们的正则表达式准确化，越准确的正则表达式匹配时，他的回溯情况就越少，所以它的性能就越高。
+2. 在正则表达式已经没有办法再进行优化的情况下，我们可以先选取一些没有回复情况的特征值进行先置条件判断，这样的话，我们能够尽量多的去避免一些无意义的好事匹配，优化我们的性能。
+3. 借助其他线程(`Web Socket`)或者服务来进行正则处理，避免用户卡顿。
 
 ### 软件开发架构方式
 
