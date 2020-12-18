@@ -92,9 +92,14 @@ LFU 缓存
 
 > LFU
 
+##### 买股票的最佳时机
+
+1. leetcode121. 买卖股票的最佳时机
+
 ##### 位运算
 
-1. * [x] 缺失的数字 - [lru/index.js](src/algorithm/bit/missing-number.js)
+1. * [x] 缺失的数字 - [bit/missing-number.js](src/algorithm/bit/missing-number.js)
+2. * [x] 找不同 - [find-the-difference.js](src/algorithm/bit/find-the-difference.js)
 
 ##### 双指针问题
 
@@ -214,6 +219,8 @@ DFS: 深度优先算法，主要是递归
    2. 无向图
    3. 顶点和边
    4. 邻接表表示 和 邻接矩阵表示
+   5. 图的常见问题
+      1. [x] 找到小镇的法官 - [find-the-town-judge.js](src/algorithm/data-structure/graph/find-the-town-judge.js)
 9. * [x] 并查集UF Union-Find - [union-find/uf.ts](src/algorithm/data-structure/union-find/uf.ts)
     1. 实现 API
        1. `union()`  连接两个节点
@@ -324,6 +331,7 @@ SOLID 设计原则
 1. [webpack 自己总结笔记](note/webpack.md)
 2. [你的 import 被 webpack 编译成什么了 - 李永宁](https://juejin.cn/post/6859569958742196237)
 3. [深入Webpack-编写Loader - 浩麟](https://juejin.cn/post/6844903545242648589)
+4. Webpack - Loader
 
 ### 项目要求
 
