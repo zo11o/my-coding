@@ -127,6 +127,7 @@ LFU 缓存
 5. * [ ] 01背包
 6. * [x] [leetcode 647. 回文子串](https://leetcode-cn.com/problems/palindromic-substrings/) - [palindromic-substrings.js](src/algorithm/dp/palindromic-substrings)
 7. * [ ] [leetcode 486. 预测赢家](https://leetcode-cn.com/problems/predict-the-winner/)
+8. * [ ] [leetcode 300. 最大子序列](https://leetcode-cn.com/problems/longest-increasing-subsequence/) - [longest-increasing-subsequence.js](src/algorithm/dp/longest-increasing-subsequence.js)
 
 ##### 贪婪
 
@@ -162,13 +163,14 @@ def backtrack(路径, 选择列表):
 
 ##### BFS && DFS
 
-BFS: 广度优先算法，主要使用的构建一个 Queue 再遍历 Queue  
+BFS: 广度优先算法，主要使用的构建一个 Queue 再遍历 Queue
 DFS: 深度优先算法，主要是递归  
 一般来说：能用 BFS 解决的遍历都可以用 DFS 解决
 
 1. * [x] [leetcode 538. 把二叉搜索树转换为累加树](https://leetcode-cn.com/problems/convert-bst-to-greater-tree/)  - [convert-bst-to-greater-tree](src/algorithm/bfs-dfs/convert-bst-to-greater-tree.js)
 2. * [x] 电话号码的字母组合 - [letter-combinations.js](src/algorithm/bfs-dfs/letter-combinations.js)
 3. * [x] 合并二叉树 - [mergeTrees.js](src/algorithm/bfs-dfs/mergeTrees.js)
+4. * [x] 二叉树的锯齿形层序遍历 - [binary-tree-zigzag-level-order-traversal.js](src/algorithm/bfs-dfs/binary-tree-zigzag-level-order-traversal.js)
 
 ##### 数据结构
 
