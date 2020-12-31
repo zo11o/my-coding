@@ -94,12 +94,15 @@ LFU 缓存
 
 ##### 买股票的最佳时机
 
-1. leetcode121. 买卖股票的最佳时机
+1. * [ ] leetcode 121. 买卖股票的最佳时机
 
 ##### 位运算
 
 1. * [x] 缺失的数字 - [bit/missing-number.js](src/algorithm/bit/missing-number.js)
 2. * [x] 找不同 - [find-the-difference.js](src/algorithm/bit/find-the-difference.js)
+
+##### 单调栈
+1. * [ ] leetcode 84. 柱状图中最大的矩形
 
 ##### 双指针问题
 
@@ -126,12 +129,14 @@ LFU 缓存
 4. * [x] [leetcode 120. 三角形最小路径和](https://leetcode-cn.com/problems/triangle/) - [triangle.js](src/algorithm/dp/triangle.js)
 5. * [ ] 01背包
 6. * [x] [leetcode 647. 回文子串](https://leetcode-cn.com/problems/palindromic-substrings/) - [palindromic-substrings.js](src/algorithm/dp/palindromic-substrings)
-7. * [ ] [leetcode 486. 预测赢家](https://leetcode-cn.com/problems/predict-the-winner/)
-8. * [ ] [leetcode 300. 最大子序列](https://leetcode-cn.com/problems/longest-increasing-subsequence/) - [longest-increasing-subsequence.js](src/algorithm/dp/longest-increasing-subsequence.js)
+7. * [x] [leetcode 486. 预测赢家](https://leetcode-cn.com/problems/predict-the-winner/)
+8. * [x] [leetcode 300. 最大子序列](https://leetcode-cn.com/problems/longest-increasing-subsequence/) - [longest-increasing-subsequence.js](src/algorithm/dp/longest-increasing-subsequence.js)
+9. * [x] [leetcode 978. 最长湍流子数组](https://leetcode-cn.com/problems/longest-turbulent-subarray) -[longest-turbulent-subarray.js](src/algorithm/dp/longest-turbulent-subarray.js)
 
-##### 贪婪
+##### 贪心
 
 1. 最长回文串
+2. * [x] [leetcode 330. 按要求补齐数组](https://leetcode-cn.com/problems/patching-array/) -[longest-turbulent-subarray.js](src/algorithm/greedy/patching-array.js)
 
 ##### 回溯
 
