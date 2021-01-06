@@ -1,4 +1,4 @@
-function twoSum () {
+function twoSum (target) {
   // 双指针法
   var n = numbers.length
   var lo = 0; hi = n - 1;
