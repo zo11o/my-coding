@@ -241,7 +241,7 @@ DFS: 深度优先算法，主要是递归
        1. 平衡性优化: 加入重量 `size`
        2. 路径压缩: `find()` 加入 `parents[x] = parents[parents[x]]`
     4. 并查集的常见问题
-       1. * [x] leetcode 399. 除数求值 - [evaluate-division](src/algorithm/data-structure/graph/evaluate-division.js)
+       1. * [x] leetcode 399. 除数求值 - [evaluate-division](src/algorithm/data-structure/union-find/evaluate-division.js)
 
 #### 设计模式
 
