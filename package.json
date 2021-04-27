@@ -26,6 +26,7 @@
     "koa-onerror": "^4.1.0",
     "koa-static": "^5.0.0",
     "koa2-cors": "^2.0.6",
+    "nodemon": "^2.0.7",
     "regenerator-runtime": "^0.13.5"
   },
   "dependencies": {
@@ -35,7 +36,8 @@
     "koa-json": "^2.0.2",
     "koa-multer": "^1.0.2",
     "koa-router": "^9.1.0",
-    "koa-views": "^6.3.0"
+    "koa-views": "^6.3.0",
+    "vue": "^2.6.12"
   },
   "nodemonConfig": {
     "ignore": [

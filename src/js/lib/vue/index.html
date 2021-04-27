@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>vue 2.0 双向绑定原理</title>
+</head>
+<body>
+  <div id="app">
+    <p>{{ name }}</p>
+    <ui>
+      <li>{{ age }} </li>
+    </ui>
+  </div>
+  <script src="./index.js"></script>
+
+  <script>
+    let vm = new Vue({
+      el: '#app',
+      data() {
+        return {
+          name: 'zorro',
+          age: 24
+        }
+      },
+    })
+
+    console.log(vm._data)
+    console.log(vm.name)
+    console.log(vm.age)
+    console.log(vm.name = 'zo11o2')
+    console.log(vm)
+  </script>
+</body>
+</html>
