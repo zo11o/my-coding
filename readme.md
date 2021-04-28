@@ -36,6 +36,7 @@
 24. * [x] possMessage 通讯 - [possMessage/index.js](src/js/base/possMessage/index.js)
 25. * [x] Object.is 判断两个变量相等 - [is.js](src/js/base/is.js)
 26. * [x] 不产生新数组去重 - [removeDuplicates.js](src/js/base/removeDuplicates.js)
+27. * [x] 将 rgba 转为 16 进制颜色 - [rgba2num.js](src/js/base/rgba2num.js)
 
 ##### 项目优化
 
