@@ -2,13 +2,15 @@
 
 Function.prototype.myCall = function () {
     let fn = this;
+    // 参数转化为数组
     var args = Array.from(arguments);
+    // 获取执行作用域
     var context = args[0]
+    // 截取了第一个参数 获取后面的参数
     var _args = args.slice(1);
-
     var s = Symbol('fn');
-    context.s = fn
-    var result = context.s(..._args);
+    // 访问 Symbol 属性只能用 [] 运算符
+    var result = context[s](..._args);
     delete context.s
     return result;
 }
