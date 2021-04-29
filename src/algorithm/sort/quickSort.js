@@ -147,7 +147,7 @@ export default quickSort;
 
 
 // 比较好理解的方法
-;(function() {
+; (function () {
   /**
    * 快速排序
    * 步骤: 主要是获取到一个基准值, 然后再递归这个基准值的左边和右边
@@ -165,12 +165,12 @@ export default quickSort;
     if (left < right) {
       partitionIndex = partition(nums, left, right)
       quickSort(nums, left, partitionIndex),
-      quickSort(nums, partitionIndex + 1, right);
+        quickSort(nums, partitionIndex + 1, right);
     }
     return nums;
   }
 
-  function partition (arr, left, right) {
+  function partition(arr, left, right) {
     let pivot = left
     let index = pivot + 1;
     for (let i = index; i <= right; i++) {
@@ -178,7 +178,7 @@ export default quickSort;
         swap(arr, i, index)
         index++
       }
-    console.log(arr)
+      console.log(arr)
 
     }
     swap(arr, pivot, index - 1)
@@ -195,3 +195,115 @@ export default quickSort;
   let res = quickSort([3, 2, 6, 5, 1, 2, 4])
   console.log(res)
 }())
+
+
+  ; (function () {
+    let len;
+
+    function buildMaxHeap(nums) {
+      len = nums.length;
+
+      for (let i = Math.floor(len / 2); i >= 0; i--) {
+        heapify(nums, i)
+      }
+
+    }
+
+    function swap(arr, i, j) {
+      var temp = arr[i];
+      arr[i] = arr[j];
+      arr[j] = temp;
+    }
+
+    function heapify(arr, index) {
+      let left = 2 * index + 1
+      let right = 2 * index + 2
+      let largest = index
+
+      if (left < len && arr[left] > arr[largest]) {
+        largest = left
+      }
+
+      if (right < len && arr[right] > arr[largest]) {
+        largest = right
+      }
+
+      if (largest != index) {
+        swap(arr, index, largest)
+        heapify(arr, largest)
+      }
+    }
+
+    /**
+     * 堆排序
+     * 1. 构建大顶堆
+     */
+    function heapSort(nums) {
+      buildMaxHeap(nums)
+      // console.log(nums)
+      for (let i = nums.length -1;i > 0;i--) {
+        swap(nums, 0, i)
+        len --;
+        heapify(nums, 0)
+      }
+
+      return nums
+    }
+
+    let res = heapSort([5, 8, 2, 9, 4, 7])
+    console.log(res)
+
+
+
+
+
+    // var len;    // 因为声明的多个函数都需要数据长度，所以把len设置成为全局变量
+
+    // function buildMaxHeap(arr) {   // 建立大顶堆
+    //   len = arr.length;
+    //   for (var i = Math.floor(len / 2); i >= 0; i--) {
+    //     heapify(arr, i);
+    //   }
+    // }
+
+    // function heapify(arr, i) {     // 堆调整
+    //   var left = 2 * i + 1,
+    //     right = 2 * i + 2,
+    //     largest = i;
+
+    //   if (left < len && arr[left] > arr[largest]) {
+    //     largest = left;
+    //   }
+
+    //   if (right < len && arr[right] > arr[largest]) {
+    //     largest = right;
+    //   }
+
+    //   if (largest != i) {
+    //     swap(arr, i, largest);
+    //     heapify(arr, largest);
+    //   }
+    // }
+
+    // function swap(arr, i, j) {
+    //   var temp = arr[i];
+    //   arr[i] = arr[j];
+    //   arr[j] = temp;
+    // }
+
+    // function heapSort(arr) {
+    //   buildMaxHeap(arr);
+
+    //   for (var i = arr.length - 1; i > 0; i--) {
+    //     console.log(arr)
+    //     swap(arr, 0, i);
+    //     len--;
+    //     heapify(arr, 0);
+    //   }
+    //   return arr;
+    // }
+
+    // let res = heapSort([5, 8, 2, 9, 4, 7])
+    // console.log(res)
+
+  }())
