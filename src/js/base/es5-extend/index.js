@@ -179,3 +179,6 @@
     // let instance = new Subtype('zorro', 123)
     // console.log(instance)
   }())
+
+
+//  ES6
