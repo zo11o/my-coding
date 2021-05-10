@@ -9,3 +9,7 @@
 8. [顺时针打印矩阵](https://leetcode-cn.com/problems/shun-shi-zhen-da-yin-ju-zhen-lcof/) - [spiralOrder.js](spiralOrder.js)
 9. [二进制中1的个数](https://leetcode-cn.com/problems/er-jin-zhi-zhong-1de-ge-shu-lcof/) - [hammingWeight](hammingWeight.js)
 10. [数值的整数次方](https://leetcode-cn.com/problems/shu-zhi-de-zheng-shu-ci-fang-lcof/) - [myPow.js](myPow.js)
+11. [反转链表](https://leetcode-cn.com/problems/fan-zhuan-lian-biao-lcof/) - [reverseList](reverseList.js)
+12. [链表的倒数第K个值](https://leetcode-cn.com/problems/lian-biao-zhong-dao-shu-di-kge-jie-dian-lcof/) - [getKthFromEnd.js](getKthFromEnd.js)
+13. [合并两个排序的链表](https://leetcode-cn.com/problems/he-bing-liang-ge-pai-xu-de-lian-biao-lcof/) - [mergeTwoLists.js](mergeTwoLists.js)
+14. [树的子结构](https://leetcode-cn.com/problems/shu-de-zi-jie-gou-lcof/) - [isSubStructure.js](isSubStructure.js)
