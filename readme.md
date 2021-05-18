@@ -272,6 +272,8 @@ DFS: 深度优先算法，主要是递归
     4. 并查集的常见问题
        1. * [x] [leetcode 399. 除数求值](https://leetcode-cn.com/problems/evaluate-division/) - [evaluate-division](src/algorithm/data-structure/union-find/evaluate-division.js)
 
+10. *[x] 字典树 - [Trie.js](./src/algorithm/data-structure/trie/index.js)
+
 #### 设计模式
 
 首先说起软件设计模式，就必须说到 SOLID 设计原则

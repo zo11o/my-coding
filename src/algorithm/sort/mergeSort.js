@@ -19,7 +19,6 @@ function mergeSort(nums) {
 
 function merge(left, right) {
   var result = []
-  var l, r
   while (left.length && right.length) {
     if (right[0] >= left[0]) {
       result.push(left.shift());
