@@ -21,3 +21,4 @@
 20. [二叉搜索树与双向链表](https://leetcode-cn.com/problems/er-cha-sou-suo-shu-yu-shuang-xiang-lian-biao-lcof/) - [treeToDoublyList.js](https://leetcode-cn.com/problems/er-cha-sou-suo-shu-yu-shuang-xiang-lian-biao-lcof/)
 21. [字符串的排列](https://leetcode-cn.com/problems/zi-fu-chuan-de-pai-lie-lcof/) - (permutation.js)[permutation.js]
 22. [数组中的第K个最大元素](https://leetcode-cn.com/problems/kth-largest-element-in-an-array/) - (findKthLargest)[findKthLargest.js]
+23. [连续子数组的最大和](https://leetcode-cn.com/problems/lian-xu-zi-shu-zu-de-zui-da-he-lcof/) - (maxSubArray.js)[maxSubArray.js]
