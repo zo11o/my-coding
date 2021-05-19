@@ -178,8 +178,6 @@ export default quickSort;
         swap(arr, i, index)
         index++
       }
-      console.log(arr)
-
     }
     swap(arr, pivot, index - 1)
 

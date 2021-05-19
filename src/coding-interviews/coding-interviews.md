@@ -19,3 +19,5 @@
 18. [二叉树中和为某一值的路径](https://leetcode-cn.com/problems/er-cha-shu-zhong-he-wei-mou-yi-zhi-de-lu-jing-lcof/) - [pathSum.js](pathSum.js)
 19. [二叉搜索树的后序遍历序列](https://leetcode-cn.com/problems/er-cha-sou-suo-shu-de-hou-xu-bian-li-xu-lie-lcof/) - [verifyPostorder.js](verifyPostorder.js)
 20. [二叉搜索树与双向链表](https://leetcode-cn.com/problems/er-cha-sou-suo-shu-yu-shuang-xiang-lian-biao-lcof/) - [treeToDoublyList.js](https://leetcode-cn.com/problems/er-cha-sou-suo-shu-yu-shuang-xiang-lian-biao-lcof/)
+21. [字符串的排列](https://leetcode-cn.com/problems/zi-fu-chuan-de-pai-lie-lcof/) - (permutation.js)[permutation.js]
+22. [数组中的第K个最大元素](https://leetcode-cn.com/problems/kth-largest-element-in-an-array/) - (findKthLargest)[findKthLargest.js]
