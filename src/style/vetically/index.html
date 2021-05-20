@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>垂直居中</title>
+  <style>
+    .container {
+      height: 400px;
+      background-color: green;
+    }
+    .box1 {
+      background: tomato;
+      width: 240px;
+      height: 120px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="box1"></div>
+  </div>
+
+  <style>
+    /* 方案一 flex 不需要知道宽高 */
+    .container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    /* 方案二： position + 负 margin + left：50% + top：50%  */
+    /* .container {
+      position: relative;
+    }
+    .box1 {
+      position: absolute;
+      left: 50%;
+      margin-left: -120px;
+      top: 50%;
+      margin-top: -60px;
+    } */
+
+    /* 方案三 transform: translate(-50%, -50%) */
+    /* .container {
+      position: relative;
+    }
+    .box1 {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+    } */
+
+    /* 方案四：grid */
+    /* .container {
+      display: grid;
+      justify-items:center;
+      align-items:center;
+    } */
+  </style>
+</body>
+</html>
