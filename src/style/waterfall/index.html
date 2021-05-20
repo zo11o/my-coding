@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>瀑布流</title>
+  <style>
+    .box {
+      position: relative;
+      vertical-align: top;
+    }
+
+    .box img {
+      position: absolute;
+      width: 100px;
+    }
+
+    .box::after {
+      content: "";
+      display: block;
+      clear: both;
+      /* height: 0;overflow: hidden; 为了解决 IE 浏览器的兼容问题 */
+      height: 0;
+      overflow: hidden;
+      /* visibility:hidden;为了去隐藏content中的内容 */
+      visibility: hidden;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="box">
+    <img src='./images/1.jpg' />
+    <img src='./images/2.jpg' />
+    <img src='./images/3.jpg' />
+    <img src='./images/4.jpg' />
+    <img src='./images/5.jpg' />
+    <img src='./images/6.jpg' />
+    <img src='./images/7.jpg' />
+    <img src='./images/8.jpg' />
+    <img src='./images/1.jpg' />
+    <img src='./images/9.jpg' />
+    <img src='./images/10.jpg' />
+    <img src='./images/11.jpg' />
+    <img src='./images/12.jpg' />
+    <img src='./images/13.jpg' />
+    <img src='./images/1.jpg' />
+    <img src='./images/2.jpg' />
+    <img src='./images/3.jpg' />
+    <img src='./images/5.jpg' />
+    <img src='./images/6.jpg' />
+    <img src='./images/7.jpg' />
+    <img src='./images/1.jpg' />
+    <img src='./images/8.jpg' />
+    <img src='./images/9.jpg' />
+    <img src='./images/10.jpg' />
+    <img src='./images/11.jpg' />
+    <img src='./images/12.jpg' />
+    <img src='./images/13.jpg' />
+    <img src='./images/13.jpg' />
+    <img src='./images/1.jpg' />
+    <img src='./images/2.jpg' />
+    <img src='./images/3.jpg' />
+    <img src='./images/1.jpg' />
+    <img src='./images/1.jpg' />
+    <img src='./images/4.jpg' />
+    <img src='./images/1.jpg' />
+    <img src='./images/2.jpg' />
+    <img src='./images/3.jpg' />
+    <img src='./images/4.jpg' />
+    <img src='./images/5.jpg' />
+    <img src='./images/1.jpg' />
+    <img src='./images/6.jpg' />
+    <img src='./images/7.jpg' />
+    <img src='./images/8.jpg' />
+    <img src='./images/9.jpg' />
+    <img src='./images/10.jpg' />
+    <img src='./images/11.jpg' />
+    <img src='./images/4.jpg' />
+    <img src='./images/5.jpg' />
+    <img src='./images/6.jpg' />
+    <img src='./images/7.jpg' />
+    <img src='./images/8.jpg' />
+    <img src='./images/9.jpg' />
+    <img src='./images/10.jpg' />
+    <img src='./images/11.jpg' />
+    <img src='./images/12.jpg' />
+    <img src='./images/13.jpg' />
+    <img src='./images/4.jpg' />
+    <img src='./images/5.jpg' />
+    <img src='./images/6.jpg' />
+    <img src='./images/7.jpg' />
+    <img src='./images/8.jpg' />
+    <img src='./images/9.jpg' />
+    <img src='./images/10.jpg' />
+    <img src='./images/11.jpg' />
+    <img src='./images/12.jpg' />
+  </div>
+  <div>圣诞节佛i是滴哦发掘</div>
+  <script src="index.js"></script>
+</body>
+
+</html>

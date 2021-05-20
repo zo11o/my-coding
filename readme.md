@@ -57,7 +57,7 @@
 #### CSS 基础
 
 1. * [ ] 垂直居中
-2. * [ ] 瀑布流
+2. * [x] 瀑布流 - [waterfall/index.html](src/style/waterfall/index.html)
 3. * [ ] 圣杯布局 - [grail/index.html](grail/index.html)
 4. * [x] 左中右三列布局，左右固定 220px， 中间自适应且先加载 - [three-cols/index.html](three-cols/index.html)
 
